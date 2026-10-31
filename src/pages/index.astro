@@ -1,11 +1,35 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Studio from '../components/Studio'
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta
+      name='description'
+      content='Jencut, tu estudio de edición local. Monta, recorta y exporta tus historias conservando tus originales.'
+    />
+    <meta name='robots' content='noindex, nofollow' />
+    <meta name='theme-color' content='#101114' />
+    <meta property='og:title' content='Jencut · Tu estudio, a tu ritmo' />
+    <meta
+      property='og:description'
+      content='Edición de video personal y local.'
+    />
+    <meta property='og:image' content='/brand/png/logo-on-dark-1024.png' />
+    <link rel='icon' type='image/svg+xml' href='/brand/favicon.svg' />
+    <link
+      rel='preload'
+      href='/fonts/Inter-Variable.ttf'
+      as='font'
+      type='font/ttf'
+      crossorigin
+    />
+    <title>Jencut · Tu estudio, a tu ritmo</title>
+  </head>
+  <body>
+    <Studio client:only='react' />
+  </body>
+</html>
