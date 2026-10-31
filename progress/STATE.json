@@ -1,0 +1,141 @@
+{
+  "contextVersion": "1.1",
+  "updatedAt": "2026-10-30",
+  "productImplementation": "H0_H1_functional_H2_in_progress",
+  "currentMilestone": "H2",
+  "milestones": [
+    {
+      "id": "H0",
+      "status": "complete",
+      "evidence": [
+        "progress/evidence/environment.json",
+        "progress/evidence/quality.txt",
+        "progress/evidence/original-package-check.txt"
+      ]
+    },
+    {
+      "id": "H1",
+      "status": "complete",
+      "evidence": [
+        "tests/service.test.ts",
+        "tests/e2e/editor.spec.ts",
+        "progress/evidence/h1-export.json",
+        "progress/evidence/h1-job-snapshot.json",
+        "progress/evidence/h1-ffmpeg.json",
+        "progress/evidence/e2e-production.txt"
+      ]
+    },
+    {
+      "id": "H2",
+      "status": "in_progress",
+      "evidence": [
+        "tests/domain.test.ts",
+        "progress/evidence/h2-increment.json",
+        "progress/evidence/e2e-production.txt"
+      ]
+    },
+    {
+      "id": "H3",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "H4",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "H5",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "H6",
+      "status": "pending",
+      "evidence": []
+    }
+  ],
+  "completedRequirements": [],
+  "blockedRequirements": [],
+  "verifiedCapabilities": [
+    "create_persist_reopen",
+    "stream_import_and_probe",
+    "corrupt_media_rejection",
+    "CFR_proxy_and_real_montage_preview",
+    "presented_frame_45_confirmed",
+    "linked_trim_and_keyboard_split",
+    "150_command_history_105_roundtrip_test",
+    "revision_conflict_and_writer_lease",
+    "native_worker_export_and_ffprobe_inspection",
+    "original_hash_preserved",
+    "basic_cancel_and_idempotent_submission",
+    "track_add_rename_reorder_lock_hide_mute",
+    "collision_and_conservative_ripple_atomicity",
+    "independent_project_copy_shared_originals",
+    "unused_resource_menu",
+    "12_domain_service_tests",
+    "3_browser_e2e_tests",
+    "axe_no_violations_on_tested_desktop_views"
+  ],
+  "lastExport": {
+    "projectId": "16be4a2a-8b27-4974-8cd1-06e20f291842",
+    "revision": 6,
+    "jobId": "0f52972e-b705-4184-9a0e-a2702d9ea17a",
+    "frames": 81,
+    "durationSeconds": 2.7,
+    "resolution": [1280, 720],
+    "output": ".jencut/evidence/h1-export.mp4",
+    "evidence": "progress/evidence/h1-export.json"
+  },
+  "nextActions": [
+    "H2: selección múltiple arbitraria; expandir vínculos y preservar offsets internos",
+    "H2: mover/duplicar/eliminar grupos como transacción, con colisión/bloqueo/ripple y undo atómicos",
+    "Completar extensión directa de IN/OUT, cache de derivados cancelable y papelera RF-50",
+    "Continuar H3 solo después del siguiente corte verificado; mantener M2/M3 fuera de alcance"
+  ],
+  "knownLimitations": [
+    "Preview regenerado por revisión; sin certificación de rendimiento ni sincronización de 10 minutos",
+    "Trim inicial solo reduce el rango actual; extensión mediante undo",
+    "Audio avanzado, títulos, geometría, color y paridad alfa pendientes H3",
+    "Recuperación avanzada y fallos de almacenamiento pendientes H4",
+    "Tema claro, móvil y fidelidad completa pendientes H5",
+    "La matriz completa de RF/RNF M1 se cierra en H6; las capacidades verificadas aquí no certifican requisitos enteros"
+  ],
+  "note": "Paquete original preservado; código en src; Node 24.22.2 y pnpm 10.33.2; SQLite/FFmpeg en Docker. Commits convencionales separados por responsabilidad, con autor y committer del usuario y sin coautores.",
+  "visualGate": {
+    "fails": 0,
+    "warnings": 4,
+    "allow": ["palette-purple"],
+    "reason": "Precision A explicitly chosen by user",
+    "evidence": "progress/evidence/design-inspection.json"
+  },
+  "lastMaintenance": {
+    "task": "code_style_configuration",
+    "date": "2026-10-30",
+    "status": "complete",
+    "details": "Oxfmt: comillas simples, sin punto y coma finales e imports agrupados; Oxlint: padding, orden de nombres y separación de métodos. Aplicado al código, VS Code y lint-staged.",
+    "verified": [
+      "pnpm format",
+      "pnpm verify: lint, format, types, 12 tests, build",
+      "Control negativo de estilo y pipeline de lint-staged idempotente"
+    ],
+    "evidence": [
+      "progress/evidence/code-style.txt",
+      "progress/evidence/code-style.json",
+      "docs/current/CODE_STYLE.md"
+    ]
+  },
+  "gitWorkflow": {
+    "integrationBranch": "develop",
+    "featureBranch": "feature/m1-editor-foundation",
+    "author": {
+      "name": "jeancdev",
+      "email": "jcode2006@gmail.com"
+    },
+    "coAuthors": false,
+    "pullRequest": "https://github.com/jeancdevx/jencut/pull/1",
+    "authentication": "GitHub CLI: jeancdevx",
+    "mergeMethod": "merge",
+    "historyStrategy": "Commits convencionales separados por responsabilidad, conservados por merge commit"
+  }
+}

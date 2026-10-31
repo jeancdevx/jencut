@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "scope": "Paquete de contexto, ejemplos y fixtures; no pruebas de Jencut implementado",
+  "requirements": 54,
+  "m1": 45,
+  "qualityAttributes": 18,
+  "referenceImages": 4,
+  "pngFiles": 25,
+  "crossInvariantExamples": true,
+  "rejectedExampleMutations": 3,
+  "formalJSONSchemaEngineExecuted": false,
+  "mediaProbeExecuted": true,
+  "validMediaProbed": 5,
+  "invalidMediaRejected": true,
+  "checksumFilesVerified": 0,
+  "productTests": "not_run",
+  "preparedAt": "2026-10-30",
+  "fixtureGeneratorReusePreservesMedia": true,
+  "fixtureGeneratorRejectsUnknownExistingFile": true,
+  "brandRasterization": "native SVG render at requested sizes; reviewed",
+  "note": "Este informe valida el paquete de arranque; ningún requisito de la futura aplicación se declara aprobado."
+}

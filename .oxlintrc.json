@@ -1,0 +1,89 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "jsx-a11y", "import"],
+  "jsPlugins": ["@stylistic/eslint-plugin"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "no-unused-vars": "error",
+    "import/first": "error",
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "sort-imports": ["error", { "ignoreDeclarationSort": true }],
+    "@stylistic/padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": ["const", "let", "var", "using"],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": ["const", "let", "var", "using"],
+        "next": ["const", "let", "var", "using"]
+      },
+      {
+        "blankLine": "always",
+        "prev": ["block-like", "export", "type", "interface"],
+        "next": "*"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": [
+          "return",
+          "throw",
+          "if",
+          "switch",
+          "try",
+          "for",
+          "while",
+          "do",
+          "export",
+          "function",
+          "class",
+          "type",
+          "interface"
+        ]
+      },
+      {
+        "blankLine": "any",
+        "prev": "import",
+        "next": "*"
+      }
+    ],
+    "@stylistic/lines-between-class-members": [
+      "error",
+      {
+        "enforce": [
+          { "blankLine": "always", "prev": "method", "next": "method" },
+          { "blankLine": "always", "prev": "field", "next": "method" },
+          { "blankLine": "always", "prev": "method", "next": "field" }
+        ]
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "controlComponents": [
+          "Input",
+          "NativeSelect",
+          "Slider",
+          "Switch",
+          "SelectTrigger"
+        ],
+        "labelComponents": ["Label", "FieldLabel"]
+      }
+    ]
+  },
+  "ignorePatterns": ["**/dist/**", "jencut-codex-starter-v1/**", ".agents/**"],
+  "overrides": [
+    {
+      "files": ["src/components/ui/**"],
+      "rules": {
+        "jsx-a11y/prefer-tag-over-role": "off",
+        "jsx-a11y/label-has-associated-control": "off"
+      }
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-30",
+  "branch": "feature/m1-editor-foundation",
+  "base": "develop",
+  "implementationCommitsAudited": 24,
+  "implementationHead": "33293f412314dbbc838b29e9c5c5926f8caf01ff",
+  "author": "jeancdev <jcode2006@gmail.com>",
+  "coAuthors": false,
+  "oversizedLocalCommitRemovedBeforePublication": true,
+  "quality": {
+    "lint": "pass",
+    "format": "pass",
+    "types": "pass",
+    "domainServiceTests": 12,
+    "browserE2ETests": 3,
+    "dockerRebuilt": true,
+    "mp4Frames": 81,
+    "mp4Duration": 2.7,
+    "originalHashesUnchanged": true
+  },
+  "hookFix": "Allow intentionally ignored formatter targets while retaining lint, syntax and commit message errors.",
+  "commits": [
+    {
+      "sha": "413027bed9e39d9619a873eca4c00b49e4a7e245",
+      "subject": "docs(reference): archive the original preproduction package"
+    },
+    {
+      "sha": "97c524a690e3d5ea3e53d7ef097e326e093730e8",
+      "subject": "docs(spec): define M1 requirements and the project contract"
+    },
+    {
+      "sha": "440ef046e75652a6c48e71e1d9799631c82b787f",
+      "subject": "feat(brand): add Precision A identity fonts and Jeni assets"
+    },
+    {
+      "sha": "e40b09db584fff5922b89d9b7d26101fb593be8f",
+      "subject": "docs(design): record the selected high fidelity screen direction"
+    },
+    {
+      "sha": "4d1c344b90d67290c056f0bc308f1c39c0b59bda",
+      "subject": "docs(context): retain starter provenance and contributor guidance"
+    },
+    {
+      "sha": "a59c0df20260627efaf4dc7a4593810b3fc490ce",
+      "subject": "build(tooling): pin Node 24 pnpm and project dependencies"
+    },
+    {
+      "sha": "fd7a3168c68140c1b03f84d9d24cef867ad6c5b0",
+      "subject": "style(tooling): enforce Oxc imports quotes and block spacing"
+    },
+    {
+      "sha": "54801e0011093398a57320f37e988b68026d3132",
+      "subject": "build(git): validate staged files and conventional commit messages"
+    },
+    {
+      "sha": "efee6af884e869c0a4fce064749aeb77a3663261",
+      "subject": "feat(domain): model frame based non destructive editing"
+    },
+    {
+      "sha": "faa538086cff9642bfa44b60932f0ae5b604b623",
+      "subject": "feat(storage): persist atomic project manifests and SQLite indexes"
+    },
+    {
+      "sha": "57682679d3275dd092f728693dbf1a3105305664",
+      "subject": "feat(media): inspect originals and generate real preview derivatives"
+    },
+    {
+      "sha": "1b8d1d548592234a06aeeaf01a4c00bb2954517c",
+      "subject": "feat(export): render immutable snapshots with inspected MP4 output"
+    },
+    {
+      "sha": "f7306ceb3068a2549cb5221818f5b157c01cb4b2",
+      "subject": "feat(service): expose local editing import and export APIs"
+    },
+    {
+      "sha": "7ae0f615ce9522ab449aeca1efa5d5f68bce557a",
+      "subject": "build(local): run the persistent media service with Docker"
+    },
+    {
+      "sha": "ef10f8b801a684b6f6a67d171626280a9b5ad521",
+      "subject": "test(fixtures): add reproducible real media and corrupt input cases"
+    },
+    {
+      "sha": "8cc080416abd2fdd0a492fb15cf13635e1e94628",
+      "subject": "feat(theme): apply Precision A with locally served brand assets"
+    },
+    {
+      "sha": "d184256cdbc95c006a2bbca938317515e00c70f4",
+      "subject": "feat(ui): add shared shadcn form controls and state primitives"
+    },
+    {
+      "sha": "7f529f5b0ae8d551d7fd3bdc02b59e8e706d4bed",
+      "subject": "feat(ui): add accessible shadcn dialogs menus and selectors"
+    },
+    {
+      "sha": "f46991f3f3d3e7021ad5d98e5aeef24f633fdc40",
+      "subject": "feat(ui): compose the sidebar and resizable editor workspace"
+    },
+    {
+      "sha": "3af169d0ddc313829f2408907ad6906dbfedc1c1",
+      "subject": "feat(editor): connect the branded Astro workspace to real media edits"
+    },
+    {
+      "sha": "7a5694ff786548a81719a3e5eca70860b60dc79a",
+      "subject": "test(service): verify persistence failures and native MP4 rendering"
+    },
+    {
+      "sha": "41caa9a0c73a2f8a6464e42ac9097df429923eda",
+      "subject": "test(e2e): exercise the editor through real browser workflows"
+    },
+    {
+      "sha": "69c0283f9c233dc77f6c2f478f3c140fb7e8a6e2",
+      "subject": "ci(github): verify conventional commits and real editor workflows"
+    },
+    {
+      "sha": "33293f412314dbbc838b29e9c5c5926f8caf01ff",
+      "subject": "docs(git): define the feature PR workflow into develop"
+    }
+  ],
+  "configHashes": {
+    ".oxfmtrc.json": "5f29ac2ee79134a824e099b87cf8aa9b32e6f6eb2a18cc961c1b5168efca4ff4",
+    ".oxlintrc.json": "104daf7f52031dba44749950c4879d003e9847b93e9a62132ef5bf726a3eec28",
+    "lint-staged.config.mjs": "9f82f4f92de6be15e4c44d7f835bc95263e5731eba13c077a14805f6d440a91b",
+    ".github/workflows/ci.yml": "102ad45c61afda6bb598cb72c1125b8be8dece8693e838b2a3f215d2d01256fe",
+    "package.json": "5b6adca0da7eed335f5e7bcd11eaef2db644d034e9a7359536eb8738b6ead1ee",
+    "pnpm-lock.yaml": "78e4f6174c1094f022e2d521f2a0705412dd49ed7ee8a73eaee3deca7fe18ff6"
+  }
+}

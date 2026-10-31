@@ -1,0 +1,24 @@
+{
+  "fecha": "2026-10-28",
+  "verificacion": "Solo integridad de entregables documentales; no pruebas del producto",
+  "requirements": 54,
+  "M1": 45,
+  "quality_attributes": 18,
+  "rules": 22,
+  "flows": 9,
+  "screens": 12,
+  "references_valid": true,
+  "pdfs": {
+    "Jencut-wireframes-prototipo-v1.pdf": {
+      "pages": 16,
+      "links": 211,
+      "text_outside_page": 0
+    },
+    "Jencut-especificacion-preproduccion-v1.pdf": {
+      "pages": 61,
+      "links": 0,
+      "text_outside_page": 0
+    }
+  },
+  "product_tests": "No ejecutadas"
+}

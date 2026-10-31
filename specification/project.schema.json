@@ -1,0 +1,615 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jencut.invalid/schema/project-v1.json",
+  "title": "Jencut M1 - contrato inicial de manifiesto",
+  "description": "Contrato propuesto para H1. No implementa el motor ni sustituye validaciones de invariantes cruzadas.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "revision",
+    "fps",
+    "canvas",
+    "assets",
+    "tracks",
+    "linkGroups"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "fps": {
+      "type": "object",
+      "required": [
+        "num",
+        "den"
+      ],
+      "properties": {
+        "num": {
+          "const": 30
+        },
+        "den": {
+          "const": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "canvas": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "width",
+            "height",
+            "colorSpace"
+          ],
+          "properties": {
+            "width": {
+              "const": 1920
+            },
+            "height": {
+              "const": 1080
+            },
+            "colorSpace": {
+              "const": "rec709-sdr"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "width",
+            "height",
+            "colorSpace"
+          ],
+          "properties": {
+            "width": {
+              "const": 1080
+            },
+            "height": {
+              "const": 1920
+            },
+            "colorSpace": {
+              "const": "rec709-sdr"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "width",
+            "height",
+            "colorSpace"
+          ],
+          "properties": {
+            "width": {
+              "const": 1080
+            },
+            "height": {
+              "const": 1080
+            },
+            "colorSpace": {
+              "const": "rec709-sdr"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "width",
+            "height",
+            "colorSpace"
+          ],
+          "properties": {
+            "width": {
+              "const": 1280
+            },
+            "height": {
+              "const": 720
+            },
+            "colorSpace": {
+              "const": "rec709-sdr"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "width",
+            "height",
+            "colorSpace"
+          ],
+          "properties": {
+            "width": {
+              "const": 720
+            },
+            "height": {
+              "const": 1280
+            },
+            "colorSpace": {
+              "const": "rec709-sdr"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "width",
+            "height",
+            "colorSpace"
+          ],
+          "properties": {
+            "width": {
+              "const": 720
+            },
+            "height": {
+              "const": 720
+            },
+            "colorSpace": {
+              "const": "rec709-sdr"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/asset"
+      },
+      "maxItems": 30
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/track"
+      },
+      "maxItems": 8
+    },
+    "linkGroups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/linkGroup"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "timeBase": {
+      "type": "object",
+      "required": [
+        "num",
+        "den"
+      ],
+      "properties": {
+        "num": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "den": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "stream": {
+      "type": "object",
+      "required": [
+        "index",
+        "type",
+        "codec",
+        "timeBase",
+        "durationPTS"
+      ],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "type": {
+          "enum": [
+            "video",
+            "audio",
+            "image"
+          ]
+        },
+        "codec": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "timeBase": {
+          "$ref": "#/$defs/timeBase"
+        },
+        "durationPTS": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sampleRate": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "channels": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "asset": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "contentHash",
+        "managedRelativePath",
+        "streams"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "kind": {
+          "enum": [
+            "video",
+            "audio",
+            "image"
+          ]
+        },
+        "contentHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "managedRelativePath": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$))[^:]+$"
+        },
+        "streams": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stream"
+          },
+          "minItems": 1
+        },
+        "rotationDegrees": {
+          "type": "number"
+        },
+        "colorSpace": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "clip": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "trackId",
+        "startFrame",
+        "durationFrames",
+        "effects"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "kind": {
+          "enum": [
+            "video",
+            "audio",
+            "image",
+            "title"
+          ]
+        },
+        "trackId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "startFrame": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "durationFrames": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "assetId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "streamIndex": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sourceInPTS": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sourceTimeBase": {
+          "$ref": "#/$defs/timeBase"
+        },
+        "linkGroupId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "effects": {
+          "type": "object",
+          "properties": {
+            "transform": {
+              "type": "object",
+              "properties": {
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                },
+                "scalePercent": {
+                  "type": "number",
+                  "minimum": 1,
+                  "maximum": 1000
+                },
+                "rotationDegrees": {
+                  "type": "number",
+                  "minimum": -180,
+                  "maximum": 180
+                },
+                "opacity": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "additionalProperties": false
+            },
+            "color": {
+              "type": "object",
+              "properties": {
+                "brightness": {
+                  "type": "number",
+                  "minimum": -1,
+                  "maximum": 1
+                },
+                "contrast": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 2
+                },
+                "saturation": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 2
+                }
+              },
+              "additionalProperties": false
+            },
+            "gainDb": {
+              "type": "number",
+              "minimum": -60,
+              "maximum": 12
+            },
+            "muted": {
+              "type": "boolean"
+            },
+            "fadeInFrames": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "fadeOutFrames": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        "title": {
+          "type": "object",
+          "required": [
+            "text",
+            "fontFamily",
+            "fontSizePx",
+            "weight",
+            "color",
+            "align"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "maxLength": 500
+            },
+            "fontFamily": {
+              "enum": [
+                "Manrope",
+                "Inter"
+              ]
+            },
+            "fontSizePx": {
+              "type": "number",
+              "minimum": 8,
+              "maximum": 300
+            },
+            "weight": {
+              "enum": [
+                400,
+                600,
+                700
+              ]
+            },
+            "color": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$"
+            },
+            "align": {
+              "enum": [
+                "left",
+                "center",
+                "right"
+              ]
+            },
+            "lineHeight": {
+              "type": "number",
+              "minimum": 0.8,
+              "maximum": 2
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "video",
+                  "audio",
+                  "image"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "assetId",
+              "streamIndex",
+              "sourceInPTS",
+              "sourceTimeBase"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "title"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "title"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "track": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "order",
+        "name",
+        "locked",
+        "hidden",
+        "muted",
+        "clips"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "kind": {
+          "enum": [
+            "visual",
+            "audio"
+          ]
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "locked": {
+          "type": "boolean"
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "muted": {
+          "type": "boolean"
+        },
+        "clips": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/clip"
+          },
+          "maxItems": 50
+        }
+      },
+      "additionalProperties": false
+    },
+    "linkGroup": {
+      "type": "object",
+      "required": [
+        "id",
+        "memberClipIds"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "memberClipIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

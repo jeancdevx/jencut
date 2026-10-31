@@ -1,0 +1,35 @@
+{
+  "originalId": "16be4a2a-8b27-4974-8cd1-06e20f291842",
+  "copyId": "bfcc3b3f-8947-4220-a68c-61658ed94b22",
+  "originalRevision": 13,
+  "tracks": [
+    {
+      "name": "Video",
+      "kind": "visual",
+      "order": 0,
+      "clips": 1
+    },
+    {
+      "name": "Audio original",
+      "kind": "audio",
+      "order": 0,
+      "clips": 2
+    },
+    {
+      "name": "Música",
+      "kind": "audio",
+      "order": 1,
+      "clips": 0
+    },
+    {
+      "name": "Planos superiores",
+      "kind": "visual",
+      "order": 1,
+      "clips": 1
+    }
+  ],
+  "atomicLockRejection": true,
+  "unusedResourceRemoved": true,
+  "sharedImmutableAsset": "156be3a45f19513bf12dd8a99584d4c2f7217b15cd000a6cf8684c25d1dc7de7",
+  "newMontageIds": true
+}

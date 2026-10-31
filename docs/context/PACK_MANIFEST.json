@@ -1,0 +1,482 @@
+{
+  "name": "Jencut Codex Starter",
+  "version": "1.0",
+  "date": "2026-10-30",
+  "root": "jencut-codex-starter-v1",
+  "productImplementation": "not_started",
+  "sources": [
+    "Jencut-preproduccion-v1.zip",
+    "Diseños finales de editor/proyectos/audio/exportación del 28 de octubre de 2026"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 141
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 3812
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 634
+    },
+    {
+      "path": "GOALS.md",
+      "bytes": 1944
+    },
+    {
+      "path": "PACK_VALIDATION.json",
+      "bytes": 792
+    },
+    {
+      "path": "PLANS.md",
+      "bytes": 4616
+    },
+    {
+      "path": "PROMPT_CONTINUAR_CODEX.md",
+      "bytes": 830
+    },
+    {
+      "path": "PROMPT_INICIO_CODEX.md",
+      "bytes": 1806
+    },
+    {
+      "path": "README.md",
+      "bytes": 3870
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 2434
+    },
+    {
+      "path": "STATUS.md",
+      "bytes": 637
+    },
+    {
+      "path": "assets/ASSET_NOTES.md",
+      "bytes": 1328
+    },
+    {
+      "path": "assets/brand/README.md",
+      "bytes": 1424
+    },
+    {
+      "path": "assets/brand/favicon.ico",
+      "bytes": 12350
+    },
+    {
+      "path": "assets/brand/favicon.svg",
+      "bytes": 381
+    },
+    {
+      "path": "assets/brand/logo-monochrome.svg",
+      "bytes": 2745
+    },
+    {
+      "path": "assets/brand/logo-on-dark.svg",
+      "bytes": 2705
+    },
+    {
+      "path": "assets/brand/logo-on-light.svg",
+      "bytes": 2705
+    },
+    {
+      "path": "assets/brand/png/icon-1024.png",
+      "bytes": 33570
+    },
+    {
+      "path": "assets/brand/png/icon-128.png",
+      "bytes": 2711
+    },
+    {
+      "path": "assets/brand/png/icon-16.png",
+      "bytes": 410
+    },
+    {
+      "path": "assets/brand/png/icon-192.png",
+      "bytes": 4206
+    },
+    {
+      "path": "assets/brand/png/icon-24.png",
+      "bytes": 599
+    },
+    {
+      "path": "assets/brand/png/icon-256.png",
+      "bytes": 5834
+    },
+    {
+      "path": "assets/brand/png/icon-32.png",
+      "bytes": 768
+    },
+    {
+      "path": "assets/brand/png/icon-48.png",
+      "bytes": 1097
+    },
+    {
+      "path": "assets/brand/png/icon-512.png",
+      "bytes": 13483
+    },
+    {
+      "path": "assets/brand/png/icon-64.png",
+      "bytes": 1428
+    },
+    {
+      "path": "assets/brand/png/logo-on-dark-1024.png",
+      "bytes": 21607
+    },
+    {
+      "path": "assets/brand/png/logo-on-dark-2048.png",
+      "bytes": 50210
+    },
+    {
+      "path": "assets/brand/png/logo-on-dark-256.png",
+      "bytes": 4415
+    },
+    {
+      "path": "assets/brand/png/logo-on-dark-512.png",
+      "bytes": 9255
+    },
+    {
+      "path": "assets/brand/png/logo-on-light-1024.png",
+      "bytes": 20675
+    },
+    {
+      "path": "assets/brand/png/logo-on-light-2048.png",
+      "bytes": 48040
+    },
+    {
+      "path": "assets/brand/png/logo-on-light-256.png",
+      "bytes": 4243
+    },
+    {
+      "path": "assets/brand/png/logo-on-light-512.png",
+      "bytes": 8865
+    },
+    {
+      "path": "assets/brand/symbol-monochrome.svg",
+      "bytes": 336
+    },
+    {
+      "path": "assets/brand/symbol.svg",
+      "bytes": 326
+    },
+    {
+      "path": "assets/fonts/Inter-400.ttf",
+      "bytes": 341396
+    },
+    {
+      "path": "assets/fonts/Inter-600.ttf",
+      "bytes": 342660
+    },
+    {
+      "path": "assets/fonts/Inter-700.ttf",
+      "bytes": 343104
+    },
+    {
+      "path": "assets/fonts/Inter-OFL.txt",
+      "bytes": 4377
+    },
+    {
+      "path": "assets/fonts/Inter-Variable.ttf",
+      "bytes": 876576
+    },
+    {
+      "path": "assets/fonts/Manrope-400.ttf",
+      "bytes": 97500
+    },
+    {
+      "path": "assets/fonts/Manrope-600.ttf",
+      "bytes": 97616
+    },
+    {
+      "path": "assets/fonts/Manrope-700.ttf",
+      "bytes": 97520
+    },
+    {
+      "path": "assets/fonts/Manrope-OFL.txt",
+      "bytes": 4387
+    },
+    {
+      "path": "assets/fonts/Manrope-Variable.ttf",
+      "bytes": 164700
+    },
+    {
+      "path": "assets/fonts/fonts.css",
+      "bytes": 400
+    },
+    {
+      "path": "assets/mascot/jeni-character-sheet.png",
+      "bytes": 1343644
+    },
+    {
+      "path": "assets/mascot/jeni.png",
+      "bytes": 895846
+    },
+    {
+      "path": "design/DESIGN_SPEC.md",
+      "bytes": 3624
+    },
+    {
+      "path": "design/README.md",
+      "bytes": 1022
+    },
+    {
+      "path": "design/RECONCILIATION.md",
+      "bytes": 2743
+    },
+    {
+      "path": "design/references/00-brand-reference-A.png",
+      "bytes": 1550588
+    },
+    {
+      "path": "design/references/01-editor.png",
+      "bytes": 1775574
+    },
+    {
+      "path": "design/references/02-projects.png",
+      "bytes": 1927069
+    },
+    {
+      "path": "design/references/03-audio.png",
+      "bytes": 1774796
+    },
+    {
+      "path": "design/references/04-export.png",
+      "bytes": 1602902
+    },
+    {
+      "path": "design/tokens.json",
+      "bytes": 1910
+    },
+    {
+      "path": "docs/current/ARCHITECTURE.md",
+      "bytes": 3248
+    },
+    {
+      "path": "docs/current/BACKLOG.md",
+      "bytes": 5660
+    },
+    {
+      "path": "docs/current/BASELINE.md",
+      "bytes": 2748
+    },
+    {
+      "path": "docs/current/DECISIONS.md",
+      "bytes": 1340
+    },
+    {
+      "path": "docs/current/QUALITY_AND_TESTS.md",
+      "bytes": 2242
+    },
+    {
+      "path": "docs/current/SOURCES.md",
+      "bytes": 853
+    },
+    {
+      "path": "fixtures/README.md",
+      "bytes": 1486
+    },
+    {
+      "path": "fixtures/empty-project.jencut.json",
+      "bytes": 284
+    },
+    {
+      "path": "fixtures/import-map.json",
+      "bytes": 356
+    },
+    {
+      "path": "fixtures/project-example.jencut.json",
+      "bytes": 3397
+    },
+    {
+      "path": "fixtures/smoke/audio-44100-mono.wav",
+      "bytes": 88278
+    },
+    {
+      "path": "fixtures/smoke/clip-no-audio.mp4",
+      "bytes": 4162812
+    },
+    {
+      "path": "fixtures/smoke/clip-with-audio.mp4",
+      "bytes": 4259677
+    },
+    {
+      "path": "fixtures/smoke/fixture-manifest.json",
+      "bytes": 14323
+    },
+    {
+      "path": "fixtures/smoke/invalid-media.mp4",
+      "bytes": 42
+    },
+    {
+      "path": "fixtures/smoke/music-48000.wav",
+      "bytes": 576078
+    },
+    {
+      "path": "fixtures/smoke/overlay-alpha.png",
+      "bytes": 695
+    },
+    {
+      "path": "progress/STATE.json",
+      "bytes": 995
+    },
+    {
+      "path": "progress/VERIFICATION.md",
+      "bytes": 484
+    },
+    {
+      "path": "progress/VISUAL_REVIEW.md",
+      "bytes": 320
+    },
+    {
+      "path": "reference/preproduction-v1/Jencut-especificacion-completa.md",
+      "bytes": 144109
+    },
+    {
+      "path": "reference/preproduction-v1/Jencut-vista-editor.png",
+      "bytes": 141893
+    },
+    {
+      "path": "reference/preproduction-v1/assets/fonts/Inter-400.ttf",
+      "bytes": 341396
+    },
+    {
+      "path": "reference/preproduction-v1/assets/fonts/Inter-600.ttf",
+      "bytes": 342660
+    },
+    {
+      "path": "reference/preproduction-v1/assets/fonts/Inter-700.ttf",
+      "bytes": 343104
+    },
+    {
+      "path": "reference/preproduction-v1/assets/fonts/Inter-OFL.txt",
+      "bytes": 4377
+    },
+    {
+      "path": "reference/preproduction-v1/assets/fonts/Inter-Variable.ttf",
+      "bytes": 876576
+    },
+    {
+      "path": "reference/preproduction-v1/assets/fonts/Manrope-400.ttf",
+      "bytes": 97500
+    },
+    {
+      "path": "reference/preproduction-v1/assets/fonts/Manrope-600.ttf",
+      "bytes": 97616
+    },
+    {
+      "path": "reference/preproduction-v1/assets/fonts/Manrope-700.ttf",
+      "bytes": 97520
+    },
+    {
+      "path": "reference/preproduction-v1/assets/fonts/Manrope-OFL.txt",
+      "bytes": 4387
+    },
+    {
+      "path": "reference/preproduction-v1/assets/fonts/Manrope-Variable.ttf",
+      "bytes": 164700
+    },
+    {
+      "path": "reference/preproduction-v1/assets/referencias/jencut-exploracion-identidad.png",
+      "bytes": 1550588
+    },
+    {
+      "path": "reference/preproduction-v1/assets/referencias/jeni-expresiones-referencia.png",
+      "bytes": 1343644
+    },
+    {
+      "path": "reference/preproduction-v1/assets/referencias/jeni-referencia.png",
+      "bytes": 895846
+    },
+    {
+      "path": "reference/preproduction-v1/documentacion/00-LEEME.md",
+      "bytes": 2847
+    },
+    {
+      "path": "reference/preproduction-v1/documentacion/01-vision-alcance.md",
+      "bytes": 5501
+    },
+    {
+      "path": "reference/preproduction-v1/documentacion/02-flujos-reglas.md",
+      "bytes": 13302
+    },
+    {
+      "path": "reference/preproduction-v1/documentacion/03-requisitos-aceptacion.md",
+      "bytes": 36014
+    },
+    {
+      "path": "reference/preproduction-v1/documentacion/04-calidad-pruebas.md",
+      "bytes": 50381
+    },
+    {
+      "path": "reference/preproduction-v1/documentacion/05-arquitectura-modelo.md",
+      "bytes": 6846
+    },
+    {
+      "path": "reference/preproduction-v1/documentacion/06-diseno-interaccion.md",
+      "bytes": 7307
+    },
+    {
+      "path": "reference/preproduction-v1/documentacion/07-matriz-trazabilidad.md",
+      "bytes": 8412
+    },
+    {
+      "path": "reference/preproduction-v1/documentacion/08-backlog-riesgos-decisiones.md",
+      "bytes": 5768
+    },
+    {
+      "path": "reference/preproduction-v1/documentacion/09-preparacion-desarrollo.md",
+      "bytes": 3444
+    },
+    {
+      "path": "reference/preproduction-v1/documentacion/10-fuentes.md",
+      "bytes": 2250
+    },
+    {
+      "path": "reference/preproduction-v1/documentacion/11-diagramas.md",
+      "bytes": 1960
+    },
+    {
+      "path": "reference/preproduction-v1/especificacion.json",
+      "bytes": 63557
+    },
+    {
+      "path": "reference/preproduction-v1/pdf/Jencut-especificacion-preproduccion-v1.pdf",
+      "bytes": 183741
+    },
+    {
+      "path": "reference/preproduction-v1/pdf/Jencut-wireframes-prototipo-v1.pdf",
+      "bytes": 1161584
+    },
+    {
+      "path": "reference/preproduction-v1/verificacion-entregables.json",
+      "bytes": 549
+    },
+    {
+      "path": "scripts/export_brand.py",
+      "bytes": 2298
+    },
+    {
+      "path": "scripts/generate_test_media.py",
+      "bytes": 5348
+    },
+    {
+      "path": "scripts/validate_handoff.py",
+      "bytes": 11868
+    },
+    {
+      "path": "specification/CONTRACT_NOTES.md",
+      "bytes": 1979
+    },
+    {
+      "path": "specification/project.schema.json",
+      "bytes": 13281
+    },
+    {
+      "path": "specification/requirements-v1.json",
+      "bytes": 63557
+    }
+  ],
+  "note": "SHA256SUMS.txt verifica bytes; este inventario no es un estado de implementación."
+}

@@ -1,0 +1,14 @@
+node_modules
+.git
+.astro
+dist
+.jencut
+.agents
+.taste-skill
+jencut-codex-starter-v1
+reference
+assets
+fixtures
+test-results
+playwright-report
+progress/evidence

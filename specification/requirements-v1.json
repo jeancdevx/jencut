@@ -1,0 +1,1765 @@
+{
+  "version": "1.0",
+  "fecha": "2026-10-28",
+  "estado": "Propuesta de preproduccion, sin implementacion",
+  "objetivos": {
+    "OBJ-01": "Convertir fragmentos de video en un montaje completo sin modificar los archivos originales.",
+    "OBJ-02": "Controlar audio, composicion, titulos y efectos basicos en una misma interfaz.",
+    "OBJ-03": "Conservar y recuperar el trabajo de forma verificable.",
+    "OBJ-04": "Exportar un archivo reproducible y coherente con la linea de tiempo.",
+    "OBJ-05": "Trabajar con privacidad, respuesta predecible y operaciones accesibles."
+  },
+  "requisitos": [
+    {
+      "id": "RF-01",
+      "titulo": "Crear proyecto",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-01",
+      "pantalla": "UI-02",
+      "reglas": [
+        "RN-01",
+        "RN-02"
+      ],
+      "dependencias": [],
+      "aceptacion": "Crear un proyecto con nombre de 1 a 80 caracteres, formato 16:9, 9:16 o 1:1 y 30 fps CFR; asignar ID estable y abrir el editor vacio.",
+      "excepcion": "Rechazar nombre vacio o caracteres de control; un nombre repetido no reutiliza ni sobrescribe otro ID.",
+      "prueba": "PF-01",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-02",
+      "titulo": "Biblioteca de proyectos",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-03",
+      "flujo": "FL-01",
+      "pantalla": "UI-01",
+      "reglas": [
+        "RN-16"
+      ],
+      "dependencias": [
+        "RF-01"
+      ],
+      "aceptacion": "Listar proyectos por ultima modificacion, buscar por nombre, abrir y duplicar con nuevo ID y nuevas referencias de montaje.",
+      "excepcion": "La copia comparte medios inmutables; editar su timeline no altera el original. Si falla la apertura, conservarlo y mostrar recuperacion.",
+      "prueba": "PF-02",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-03",
+      "titulo": "Importacion multiple",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-02",
+      "pantalla": "UI-03",
+      "reglas": [
+        "RN-03",
+        "RN-04"
+      ],
+      "dependencias": [
+        "RF-01"
+      ],
+      "aceptacion": "Importar varios archivos por arrastre o selector, mostrar progreso individual y permitir continuar con los validos de un lote.",
+      "excepcion": "Cancelar una importacion incompleta limpia su temporal; el resto del lote no se pierde. El arrastre tiene alternativa mediante boton.",
+      "prueba": "PF-03",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-04",
+      "titulo": "Inspeccion de compatibilidad",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-05",
+      "flujo": "FL-02",
+      "pantalla": "UI-03",
+      "reglas": [
+        "RN-03",
+        "RN-05"
+      ],
+      "dependencias": [
+        "RF-03"
+      ],
+      "aceptacion": "Inspeccionar contenedor, streams, duracion, dimensiones, frecuencia, rotacion y tasa variable antes de habilitar un recurso.",
+      "excepcion": "Un archivo con extension MP4 pero contenido invalido se rechaza sin bloquear el editor; HEVC/HDR se identifica sin prometer soporte M1.",
+      "prueba": "PF-04",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-05",
+      "titulo": "Miniaturas y formas de onda",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-02",
+      "pantalla": "UI-04",
+      "reglas": [
+        "RN-04",
+        "RN-19"
+      ],
+      "dependencias": [
+        "RF-04"
+      ],
+      "aceptacion": "Generar miniaturas y waveform como tareas cancelables y cacheadas con clave de archivo y version de procesamiento.",
+      "excepcion": "Si falla una miniatura, usar placeholder y conservar el recurso; una waveform pendiente no impide colocar el audio.",
+      "prueba": "PF-05",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-06",
+      "titulo": "Organizar recursos",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-02",
+      "pantalla": "UI-04",
+      "reglas": [
+        "RN-04"
+      ],
+      "dependencias": [
+        "RF-03"
+      ],
+      "aceptacion": "Filtrar por tipo, buscar por nombre y renombrar la etiqueta de un recurso sin cambiar el nombre del archivo fuente.",
+      "excepcion": "Eliminar un recurso utilizado exige resolver primero sus instancias o cancelar; no borrar originales externos.",
+      "prueba": "PF-06",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-07",
+      "titulo": "Agregar a la linea de tiempo",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-03",
+      "pantalla": "UI-04",
+      "reglas": [
+        "RN-06",
+        "RN-07"
+      ],
+      "dependencias": [
+        "RF-04",
+        "RF-08"
+      ],
+      "aceptacion": "Colocar recursos en una pista compatible con tiempo inicial numerico o arrastre; por defecto solo se aceptan zonas libres.",
+      "excepcion": "Si hay colision en la misma pista, rechazar con indicacion y ofrecer otra pista; nunca sobrescribir silenciosamente.",
+      "prueba": "PF-07",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-08",
+      "titulo": "Pistas multiples",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-03",
+      "pantalla": "UI-04",
+      "reglas": [
+        "RN-06",
+        "RN-08"
+      ],
+      "dependencias": [
+        "RF-01"
+      ],
+      "aceptacion": "Crear, renombrar y reordenar hasta cuatro pistas visuales y cuatro pistas de audio, identificadas por texto y color.",
+      "excepcion": "Impedir un quinto track de cada tipo en M1 con explicacion; una pista con clips no se elimina sin confirmacion explicita de alcance.",
+      "prueba": "PF-08",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-09",
+      "titulo": "Seleccion y posicion temporal",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-03",
+      "pantalla": "UI-04",
+      "reglas": [
+        "RN-02",
+        "RN-09"
+      ],
+      "dependencias": [
+        "RF-07"
+      ],
+      "aceptacion": "Seleccionar uno o varios clips, mostrar su posicion y duracion y desplazar el cabezal por click, botones o entrada de frame.",
+      "excepcion": "Una posicion fuera del proyecto se ajusta a sus limites; seleccionar no modifica el documento ni crea historial.",
+      "prueba": "PF-09",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-10",
+      "titulo": "Previsualizacion y avance por frame",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-03",
+      "pantalla": "UI-04",
+      "reglas": [
+        "RN-02",
+        "RN-10"
+      ],
+      "dependencias": [
+        "RF-07",
+        "RF-52"
+      ],
+      "aceptacion": "Reproducir, pausar y avanzar o retroceder un frame del proyecto; ajustar volumen de monitor sin cambiar volumen exportado.",
+      "excepcion": "Si no se alcanza tiempo real, bajar calidad de preview y avisar; el seek confirma frame presentado, no solo posicion solicitada.",
+      "prueba": "PF-10",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-11",
+      "titulo": "Recortar extremos",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-03",
+      "pantalla": "UI-05",
+      "reglas": [
+        "RN-02",
+        "RN-07",
+        "RN-09"
+      ],
+      "dependencias": [
+        "RF-09"
+      ],
+      "aceptacion": "Editar IN y OUT con asas o campos numericos; actualizar duracion sin reescribir el original ni mover clips vecinos.",
+      "excepcion": "No admitir duracion menor a un frame ni limites fuera de la fuente. El recorte de un grupo vinculado conserva sincronizacion.",
+      "prueba": "PF-11",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-12",
+      "titulo": "Dividir clip",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-03",
+      "pantalla": "UI-05",
+      "reglas": [
+        "RN-09",
+        "RN-11"
+      ],
+      "dependencias": [
+        "RF-09"
+      ],
+      "aceptacion": "Dividir en un frame interior en dos clips contiguos, con rangos fuente complementarios e IDs nuevos; dividir tambien audio vinculado.",
+      "excepcion": "En el primer o ultimo limite la accion queda deshabilitada. Al deshacer vuelven el ID original, efectos y vinculos.",
+      "prueba": "PF-12",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-13",
+      "titulo": "Mover y reordenar clips",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-03",
+      "pantalla": "UI-05",
+      "reglas": [
+        "RN-06",
+        "RN-07",
+        "RN-11"
+      ],
+      "dependencias": [
+        "RF-09"
+      ],
+      "aceptacion": "Mover seleccion por tiempo exacto y pista compatible manteniendo offsets internos del grupo y audio vinculado.",
+      "excepcion": "Una colision, tiempo negativo o pista bloqueada rechaza toda la operacion; no se aplica parcialmente a la seleccion.",
+      "prueba": "PF-13",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-14",
+      "titulo": "Eliminar y cerrar hueco",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-03",
+      "pantalla": "UI-05",
+      "reglas": [
+        "RN-07",
+        "RN-12"
+      ],
+      "dependencias": [
+        "RF-09"
+      ],
+      "aceptacion": "Ofrecer eliminar dejando hueco y eliminar con cierre de hueco; esta ultima usa un intervalo y las pistas participantes desbloqueadas.",
+      "excepcion": "Antes de cerrar hueco, mostrar pistas afectadas. Si algun clip cruza el intervalo o un vinculo quedaria desfasado, bloquear y explicar.",
+      "prueba": "PF-14",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-15",
+      "titulo": "Duplicar clips",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-03",
+      "pantalla": "UI-05",
+      "reglas": [
+        "RN-04",
+        "RN-07"
+      ],
+      "dependencias": [
+        "RF-09"
+      ],
+      "aceptacion": "Duplicar una seleccion con IDs nuevos y los mismos ajustes; conservar offsets y vinculos internos del grupo duplicado.",
+      "excepcion": "Exigir una posicion libre; no copiar un vinculo hacia la instancia original ni duplicar los bytes del medio.",
+      "prueba": "PF-15",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-16",
+      "titulo": "Vincular y desvincular audio",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-04",
+      "pantalla": "UI-06",
+      "reglas": [
+        "RN-11",
+        "RN-13"
+      ],
+      "dependencias": [
+        "RF-07",
+        "RF-08"
+      ],
+      "aceptacion": "Desvincular un par video/audio para moverlo por separado sin duplicar sonido; permitir volver a vincular una seleccion compatible.",
+      "excepcion": "Solo aceptar pares con el mismo asset, rango fuente y alineacion temporal; otros casos muestran por que no pueden vincularse en M1.",
+      "prueba": "PF-16",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-17",
+      "titulo": "Extraer audio a archivo",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-04",
+      "pantalla": "UI-06",
+      "reglas": [
+        "RN-13",
+        "RN-17"
+      ],
+      "dependencias": [
+        "RF-04",
+        "RF-30"
+      ],
+      "aceptacion": "Exportar el stream de audio del rango fuente seleccionado a WAV PCM 48 kHz, sin modificar ni silenciar automaticamente el video.",
+      "excepcion": "Si la fuente no contiene audio se deshabilita. Esta operacion genera un archivo, a diferencia de desvincular pistas.",
+      "prueba": "PF-17",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-18",
+      "titulo": "Ganancia y silencio",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-04",
+      "pantalla": "UI-06",
+      "reglas": [
+        "RN-13"
+      ],
+      "dependencias": [
+        "RF-07"
+      ],
+      "aceptacion": "Ajustar ganancia por clip entre -60 y +12 dB, silenciar clips y mostrar picos estimados de la mezcla.",
+      "excepcion": "El silencio no elimina el medio; avisar de picos superiores a 0 dBFS. La mezcla exportada se limita a -1 dBTP mediante politica documentada.",
+      "prueba": "PF-18",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-19",
+      "titulo": "Fundidos de audio",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-04",
+      "pantalla": "UI-06",
+      "reglas": [
+        "RN-13"
+      ],
+      "dependencias": [
+        "RF-18"
+      ],
+      "aceptacion": "Configurar fade-in y fade-out lineales de ganancia por duracion, en segundos mostrados y frames del proyecto almacenados.",
+      "excepcion": "La suma de fundidos no excede la duracion del clip; valores invalidos se rechazan sin aplicacion parcial.",
+      "prueba": "PF-19",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-20",
+      "titulo": "Transformacion visual",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-05",
+      "pantalla": "UI-07",
+      "reglas": [
+        "RN-08",
+        "RN-14"
+      ],
+      "dependencias": [
+        "RF-07"
+      ],
+      "aceptacion": "Ajustar posicion, escala, rotacion y opacidad; ofrecer ajustar y rellenar conservando aspecto; usar coordenadas del lienzo.",
+      "excepcion": "Restablecer vuelve a valores por defecto. El modo rellenar informa visualmente del recorte; validar valores finitos y limites de escala.",
+      "prueba": "PF-20",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-21",
+      "titulo": "Correccion visual basica",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-05",
+      "pantalla": "UI-07",
+      "reglas": [
+        "RN-14"
+      ],
+      "dependencias": [
+        "RF-20"
+      ],
+      "aceptacion": "Ajustar brillo, contraste y saturacion con rangos definidos en la especificacion de diseno; previsualizar, desactivar y restablecer.",
+      "excepcion": "Aplicar el mismo orden de efectos en preview y render. No presentar los controles basicos como correccion HDR o gestion de color profesional.",
+      "prueba": "PF-21",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-22",
+      "titulo": "Fundidos de video",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-05",
+      "pantalla": "UI-07",
+      "reglas": [
+        "RN-14"
+      ],
+      "dependencias": [
+        "RF-20"
+      ],
+      "aceptacion": "Configurar entrada y salida mediante opacidad sobre la composicion inferior; en V1 sin fondo se desvanece a negro.",
+      "excepcion": "La suma de fades no supera la duracion. Es un efecto del clip; no es todavia una transicion automatica entre dos clips.",
+      "prueba": "PF-22",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-23",
+      "titulo": "Titulos y textos",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-05",
+      "pantalla": "UI-07",
+      "reglas": [
+        "RN-08",
+        "RN-14"
+      ],
+      "dependencias": [
+        "RF-08",
+        "RF-20"
+      ],
+      "aceptacion": "Crear titulos de hasta 500 caracteres, con fuente, tamano, peso, color, alineacion, posicion y duracion; permitir tildes y saltos de linea.",
+      "excepcion": "Tratar el contenido como texto, nunca HTML; advertir desbordamiento del lienzo. Fuentes de proyecto incluidas en el render, sin descarga externa.",
+      "prueba": "PF-23",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-24",
+      "titulo": "Imagenes y superposiciones",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-05",
+      "pantalla": "UI-07",
+      "reglas": [
+        "RN-03",
+        "RN-08"
+      ],
+      "dependencias": [
+        "RF-04",
+        "RF-20"
+      ],
+      "aceptacion": "Usar PNG/JPEG como clips visuales de duracion elegida y respetar el canal alfa de PNG; permitir superponer sobre video.",
+      "excepcion": "Corregir orientacion de imagen; si se elimina una pista superior, la inferior permanece intacta.",
+      "prueba": "PF-24",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-25",
+      "titulo": "Deshacer y rehacer",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-03",
+      "flujo": "FL-03",
+      "pantalla": "UI-05",
+      "reglas": [
+        "RN-15"
+      ],
+      "dependencias": [
+        "RF-01"
+      ],
+      "aceptacion": "Mantener al menos 100 comandos de edicion en la sesion; cada gesto o cambio confirmado es una unica transaccion deshacible.",
+      "excepcion": "Una nueva edicion tras undo invalida la rama redo. Guardar y navegar no crean comandos; reabrir no promete restaurar todo el historial de sesion.",
+      "prueba": "PF-25",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-26",
+      "titulo": "Guardado automatico y manual",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-03",
+      "flujo": "FL-06",
+      "pantalla": "UI-04",
+      "reglas": [
+        "RN-15",
+        "RN-16"
+      ],
+      "dependencias": [
+        "RF-01"
+      ],
+      "aceptacion": "Guardar cambios confirmados tras 2 s de inactividad y como maximo cada 10 s durante edicion continua; mostrar revision guardada solo tras confirmacion durable.",
+      "excepcion": "Si falla disco o permiso, mantener estado sin guardar visible y permitir descargar el manifiesto; nunca mostrar Guardado ante un error.",
+      "prueba": "PF-26",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-27",
+      "titulo": "Recuperar trabajo",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-03",
+      "flujo": "FL-06",
+      "pantalla": "UI-10",
+      "reglas": [
+        "RN-16"
+      ],
+      "dependencias": [
+        "RF-26"
+      ],
+      "aceptacion": "Tras un cierre inesperado, ofrecer ultima revision durable y copia previa valida, mostrando fecha y diferencias de revision.",
+      "excepcion": "Un JSON corrupto no reemplaza una copia valida; abrir en recuperacion de solo lectura si no existe una revision consistente.",
+      "prueba": "PF-27",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-28",
+      "titulo": "Configurar exportacion",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-04",
+      "flujo": "FL-07",
+      "pantalla": "UI-08",
+      "reglas": [
+        "RN-02",
+        "RN-17"
+      ],
+      "dependencias": [
+        "RF-07"
+      ],
+      "aceptacion": "Elegir preset MP4 H.264/AAC, 1080p o 720p, 30 fps y relacion del proyecto; mostrar duracion, resolucion y ruta destino.",
+      "excepcion": "El preflight bloquea recursos ausentes, disco insuficiente o proyecto vacio. Estimacion de tamano se etiqueta como aproximada.",
+      "prueba": "PF-28",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-29",
+      "titulo": "Progreso y cancelacion de render",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-04",
+      "flujo": "FL-07",
+      "pantalla": "UI-09",
+      "reglas": [
+        "RN-17",
+        "RN-18"
+      ],
+      "dependencias": [
+        "RF-28"
+      ],
+      "aceptacion": "Mostrar cola y estados pendiente, procesando, cancelando, cancelado, fallido o completado; cancelar termina el proceso y libera temporales.",
+      "excepcion": "Una desconexion de la interfaz no cancela el trabajo. Al reabrir se consulta el estado del servicio; no inventar porcentaje mientras falta duracion.",
+      "prueba": "PF-29",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-30",
+      "titulo": "Validar y descargar resultado",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-04",
+      "flujo": "FL-07",
+      "pantalla": "UI-09",
+      "reglas": [
+        "RN-17"
+      ],
+      "dependencias": [
+        "RF-29"
+      ],
+      "aceptacion": "Publicar como completado solo despues de salida cero, archivo final movido atomicamente e inspeccion de streams y duracion; permitir abrir carpeta o descargar.",
+      "excepcion": "Un archivo parcial nunca se ofrece como final. Si el nombre ya existe, proponer sufijo o confirmacion explicita para reemplazar.",
+      "prueba": "PF-30",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-31",
+      "titulo": "Relocalizar medios ausentes",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-03",
+      "flujo": "FL-08",
+      "pantalla": "UI-10",
+      "reglas": [
+        "RN-04",
+        "RN-16"
+      ],
+      "dependencias": [
+        "RF-04"
+      ],
+      "aceptacion": "Resolver referencias ausentes mediante selector; comparar identidad, duracion y streams, y mostrar las instancias afectadas.",
+      "excepcion": "No sustituir silenciosamente por un homonimo. Aceptar un archivo diferente requiere accion explicita y revalidar rangos de todos sus clips.",
+      "prueba": "PF-31",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-32",
+      "titulo": "Exportar manifiesto de proyecto",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-03",
+      "flujo": "FL-06",
+      "pantalla": "UI-10",
+      "reglas": [
+        "RN-04",
+        "RN-16"
+      ],
+      "dependencias": [
+        "RF-26"
+      ],
+      "aceptacion": "Descargar un archivo .jencut.json versionado con montaje, fuentes referenciadas, ajustes y revision; explicar que no contiene los videos.",
+      "excepcion": "La exportacion del manifiesto no se anuncia como copia completa de medios; no incluir rutas externas sensibles innecesarias ni tokens.",
+      "prueba": "PF-32",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-33",
+      "titulo": "Importar manifiesto",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-03",
+      "flujo": "FL-08",
+      "pantalla": "UI-10",
+      "reglas": [
+        "RN-16"
+      ],
+      "dependencias": [
+        "RF-32"
+      ],
+      "aceptacion": "Validar esquema y version antes de crear un proyecto nuevo; abrir referencias no resueltas en el asistente de relocalizacion.",
+      "excepcion": "Version futura o estructura invalida se rechaza sin alterar otros proyectos; rutas recibidas no permiten leer archivos arbitrarios del host.",
+      "prueba": "PF-33",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-34",
+      "titulo": "Gestion de almacenamiento",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-05",
+      "flujo": "FL-09",
+      "pantalla": "UI-11",
+      "reglas": [
+        "RN-19"
+      ],
+      "dependencias": [
+        "RF-05"
+      ],
+      "aceptacion": "Mostrar uso de originales administrados, proxies, cache y renders; limpiar solo derivados regenerables seleccionados.",
+      "excepcion": "Una limpieza no borra medios originales ni renders finales. Una tarea que usa cache obtiene lease y evita su eliminacion mientras trabaja.",
+      "prueba": "PF-34",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-35",
+      "titulo": "Atajos y alternativas al arrastre",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-05",
+      "flujo": "FL-09",
+      "pantalla": "UI-11",
+      "reglas": [
+        "RN-20"
+      ],
+      "dependencias": [
+        "RF-09"
+      ],
+      "aceptacion": "Proporcionar atajos documentados y campos o menus para agregar, mover, recortar y reordenar sin arrastrar.",
+      "excepcion": "No capturar atajos de edicion al escribir en un campo; una alternativa de click permite seleccionar objeto y destino, ademas del teclado.",
+      "prueba": "PF-35",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-36",
+      "titulo": "Preferencias visuales",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-05",
+      "flujo": "FL-09",
+      "pantalla": "UI-11",
+      "reglas": [
+        "RN-20"
+      ],
+      "dependencias": [
+        "RF-01"
+      ],
+      "aceptacion": "Cambiar tema oscuro/claro, escala de interfaz y movimiento reducido sin cambiar la composicion exportada.",
+      "excepcion": "Reabrir conserva preferencias. Las animaciones de Jeni se desactivan al solicitar movimiento reducido; no bloquear tareas por un asset faltante.",
+      "prueba": "PF-36",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-37",
+      "titulo": "Mensajes y estados de Jeni",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-05",
+      "flujo": "FL-09",
+      "pantalla": "UI-12",
+      "reglas": [
+        "RN-20"
+      ],
+      "dependencias": [
+        "RF-29"
+      ],
+      "aceptacion": "Usar mensajes con accion recuperable en bienvenida, exportacion, exito y revision; Jeni es decorativa y prescindible.",
+      "excepcion": "El error siempre tiene texto y no depende de expresion o color. Un timeout no se interpreta como exito; se ofrece consultar estado y reintentar cuando proceda.",
+      "prueba": "PF-37",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-38",
+      "titulo": "Diagnostico y perfil compatible",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-05",
+      "flujo": "FL-09",
+      "pantalla": "UI-11",
+      "reglas": [
+        "RN-05"
+      ],
+      "dependencias": [
+        "RF-04"
+      ],
+      "aceptacion": "Comprobar servicio, espacio libre, soporte real de codecs y reproduccion de un clip de prueba; registrar navegador y capacidades detectadas.",
+      "excepcion": "El diagnostico identifica una capacidad no probada como tal; no asume que un formato funciona solo por su extension.",
+      "prueba": "PF-38",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-39",
+      "titulo": "Bloqueo y visibilidad de pistas",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-03",
+      "pantalla": "UI-04",
+      "reglas": [
+        "RN-08",
+        "RN-12"
+      ],
+      "dependencias": [
+        "RF-08"
+      ],
+      "aceptacion": "Bloquear ediciones por pista, ocultar pistas visuales y silenciar o aislar audio; reflejar estos estados tambien en exportacion.",
+      "excepcion": "Una operacion grupal con elementos bloqueados se rechaza como conjunto; al salir de solo se restaura la mezcla previa sin sobrescribir mutes.",
+      "prueba": "PF-39",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-40",
+      "titulo": "Zoom y ajuste magnetico",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-03",
+      "pantalla": "UI-05",
+      "reglas": [
+        "RN-02",
+        "RN-09"
+      ],
+      "dependencias": [
+        "RF-09"
+      ],
+      "aceptacion": "Cambiar zoom y desplazamiento del timeline y activar snapping de 6 px a bordes y cabezal, sin cambiar posiciones guardadas.",
+      "excepcion": "La tolerancia se calcula en pantalla y se convierte a frames segun zoom; puede desactivarse temporalmente y existe entrada numerica exacta.",
+      "prueba": "PF-40",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-41",
+      "titulo": "Marcadores y rangos de exportacion",
+      "entrega": "M2",
+      "prioridad": "Should",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-03",
+      "pantalla": "UI-05",
+      "reglas": [
+        "RN-02",
+        "RN-17"
+      ],
+      "dependencias": [
+        "RF-28"
+      ],
+      "aceptacion": "Crear marcadores nombrados y exportar un rango IN/OUT de la secuencia con duracion mayor a cero.",
+      "excepcion": "Fuera del rango no se renderiza contenido; un marcador no corta clips ni altera sincronizacion.",
+      "prueba": "PF-41",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-42",
+      "titulo": "Velocidad de clip",
+      "entrega": "M2",
+      "prioridad": "Should",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-05",
+      "pantalla": "UI-07",
+      "reglas": [
+        "RN-02",
+        "RN-11"
+      ],
+      "dependencias": [
+        "RF-20"
+      ],
+      "aceptacion": "Cambiar velocidad entre 0.25x y 4x con estrategia explicita de audio y conservacion de tono; recalcular duracion y limites.",
+      "excepcion": "Un cambio que cause colision requiere resolverla; deshacer restaura rangos, vinculos y duracion.",
+      "prueba": "PF-42",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-43",
+      "titulo": "Transicion entre clips",
+      "entrega": "M2",
+      "prioridad": "Should",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-05",
+      "pantalla": "UI-07",
+      "reglas": [
+        "RN-14"
+      ],
+      "dependencias": [
+        "RF-22"
+      ],
+      "aceptacion": "Crear disolucion entre clips con duracion y material disponible claramente visibles; preview y render comparten el calculo temporal.",
+      "excepcion": "Sin handles suficientes se limita la transicion y se explica; no alargar artificialmente la fuente ni modificar duracion sin mostrarlo.",
+      "prueba": "PF-43",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-44",
+      "titulo": "Animacion por keyframes",
+      "entrega": "M2",
+      "prioridad": "Should",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-05",
+      "pantalla": "UI-07",
+      "reglas": [
+        "RN-02",
+        "RN-14"
+      ],
+      "dependencias": [
+        "RF-20"
+      ],
+      "aceptacion": "Animar posicion, escala, rotacion y opacidad con keyframes e interpolacion lineal y hold.",
+      "excepcion": "Definir propiedad del tiempo local al clip; al dividir se preserva continuidad evaluando un keyframe de frontera.",
+      "prueba": "PF-44",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-45",
+      "titulo": "Subtitulos manuales y SRT",
+      "entrega": "M2",
+      "prioridad": "Should",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-05",
+      "pantalla": "UI-07",
+      "reglas": [
+        "RN-02",
+        "RN-20"
+      ],
+      "dependencias": [
+        "RF-23"
+      ],
+      "aceptacion": "Importar, editar y exportar SRT UTF-8; permitir quemar subtitulos en video y exportar archivo separado.",
+      "excepcion": "Detectar timestamps invalidos y superposiciones; un SRT no se ejecuta como HTML ni contiene formato activo.",
+      "prueba": "PF-45",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-46",
+      "titulo": "Subtitulos automaticos",
+      "entrega": "M3",
+      "prioridad": "Could",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-05",
+      "pantalla": "UI-07",
+      "reglas": [
+        "RN-21"
+      ],
+      "dependencias": [
+        "RF-45"
+      ],
+      "aceptacion": "Transcribir con un modelo local opcional y permitir revisar tiempos y texto antes de publicar subtitulos.",
+      "excepcion": "No enviar audio a terceros por defecto; falta de modelo o recursos no bloquea edicion y se informa del estado real.",
+      "prueba": "PF-46",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-47",
+      "titulo": "Exportacion avanzada 4K y fps",
+      "entrega": "M2",
+      "prioridad": "Should",
+      "objetivo": "OBJ-04",
+      "flujo": "FL-07",
+      "pantalla": "UI-08",
+      "reglas": [
+        "RN-02",
+        "RN-05"
+      ],
+      "dependencias": [
+        "RF-28"
+      ],
+      "aceptacion": "Habilitar perfiles 4K y 24/25/29.97/50/59.94/60 fps solo tras superar su matriz de compatibilidad y benchmarks.",
+      "excepcion": "No convertir de forma implicita un proyecto M1; duplicar secuencia y advertir del cambio de base temporal.",
+      "prueba": "PF-47",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-48",
+      "titulo": "Proyecto portatil con medios",
+      "entrega": "M2",
+      "prioridad": "Should",
+      "objetivo": "OBJ-03",
+      "flujo": "FL-06",
+      "pantalla": "UI-10",
+      "reglas": [
+        "RN-04",
+        "RN-16"
+      ],
+      "dependencias": [
+        "RF-32"
+      ],
+      "aceptacion": "Empaquetar manifiesto y medios seleccionados en un archivo portable transmitido por streaming, con inventario e integridad.",
+      "excepcion": "Verificar espacio, cancelacion y ZIP traversal al importar; un respaldo incompleto queda identificado y no se anuncia como completo.",
+      "prueba": "PF-48",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-49",
+      "titulo": "Reintentar una tarea",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-04",
+      "flujo": "FL-07",
+      "pantalla": "UI-09",
+      "reglas": [
+        "RN-17",
+        "RN-18"
+      ],
+      "dependencias": [
+        "RF-29"
+      ],
+      "aceptacion": "Permitir reintento solo tras estado terminal, creando nuevo job con la misma revision y ajustes o eligiendo explicitamente la revision actual.",
+      "excepcion": "Antes de reintentar, repetir preflight. Nunca ejecutar dos renders por doble click de la misma solicitud idempotente.",
+      "prueba": "PF-49",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-50",
+      "titulo": "Eliminar proyecto con alcance claro",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-03",
+      "flujo": "FL-01",
+      "pantalla": "UI-01",
+      "reglas": [
+        "RN-04",
+        "RN-16"
+      ],
+      "dependencias": [
+        "RF-02"
+      ],
+      "aceptacion": "Mostrar nombre y que datos se borraran; enviar a papelera de 7 dias, recuperable y con control de espacio.",
+      "excepcion": "Medios compartidos se conservan mientras exista una referencia; originales externos nunca se eliminan. Vaciado exige confirmacion y no afecta proyectos activos.",
+      "prueba": "PF-50",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-51",
+      "titulo": "Configuracion del espacio de trabajo",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-05",
+      "flujo": "FL-09",
+      "pantalla": "UI-11",
+      "reglas": [
+        "RN-19",
+        "RN-22"
+      ],
+      "dependencias": [
+        "RF-01"
+      ],
+      "aceptacion": "Elegir un directorio administrado del servicio y mostrar su ubicacion; exigir acceso de lectura/escritura y espacio suficiente.",
+      "excepcion": "No aceptar rutas de red o montajes desconectados como fiables sin diagnostico; una ruta recibida por API se resuelve dentro de raices autorizadas.",
+      "prueba": "PF-51",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-52",
+      "titulo": "Proxies y normalizacion de entrada",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-01",
+      "flujo": "FL-02",
+      "pantalla": "UI-03",
+      "reglas": [
+        "RN-05",
+        "RN-10"
+      ],
+      "dependencias": [
+        "RF-04"
+      ],
+      "aceptacion": "Generar un proxy CFR de hasta 720p para preview y conservar original; mapear cada frame del proyecto al tiempo de presentacion fuente.",
+      "excepcion": "Una fuente VFR se normaliza con politica repeticion/descarte documentada; el render usa original o intermedio de calidad, nunca el proxy 720p como maestro.",
+      "prueba": "PF-52",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-53",
+      "titulo": "Efectos avanzados y seguimiento",
+      "entrega": "M3",
+      "prioridad": "Could",
+      "objetivo": "OBJ-02",
+      "flujo": "FL-05",
+      "pantalla": "UI-07",
+      "reglas": [
+        "RN-21"
+      ],
+      "dependencias": [
+        "RF-21",
+        "RF-43"
+      ],
+      "aceptacion": "Investigar chroma key, tracking, estabilizacion y denoise como capacidades independientes con sus propios criterios y benchmark.",
+      "excepcion": "Esta fila reserva la epica; antes de implementarla se descompone en requisitos verificables y no cuenta como alcance M1 listo.",
+      "prueba": "PF-53",
+      "estado": "Especificado; no implementado"
+    },
+    {
+      "id": "RF-54",
+      "titulo": "Estado de guardado y conflictos",
+      "entrega": "M1",
+      "prioridad": "Must",
+      "objetivo": "OBJ-03",
+      "flujo": "FL-06",
+      "pantalla": "UI-10",
+      "reglas": [
+        "RN-15",
+        "RN-16"
+      ],
+      "dependencias": [
+        "RF-26"
+      ],
+      "aceptacion": "Usar revision esperada en cada guardado y una sola sesion editora por proyecto; una segunda pestana abre en solo lectura.",
+      "excepcion": "Si hay conflicto, no aplicar ultimo escritor silenciosamente; ofrecer recargar o duplicar la revision local no guardada.",
+      "prueba": "PF-54",
+      "estado": "Especificado; no implementado"
+    }
+  ],
+  "reglas": [
+    {
+      "id": "RN-01",
+      "titulo": "Identidad de proyecto",
+      "definicion": "Un proyecto usa UUID y version de esquema. El nombre es una etiqueta, no una ruta ni una clave unica."
+    },
+    {
+      "id": "RN-02",
+      "titulo": "Tiempo preciso",
+      "definicion": "El proyecto M1 usa frames enteros a 30/1 fps y rangos semiabiertos [inicio, fin). Las fuentes conservan PTS racional. Audio se evalua a 48 000 muestras/s. No acumular tiempos mediante sumas float."
+    },
+    {
+      "id": "RN-03",
+      "titulo": "Medios M1",
+      "definicion": "Entrada certificada objetivo: MP4/H.264 8 bit SDR y AAC; WAV PCM, MP3, PNG y JPEG. MOV, WebM, HEVC, HDR y codecs adicionales quedan detectados pero requieren una extension de la matriz certificada."
+    },
+    {
+      "id": "RN-04",
+      "titulo": "No destructivo",
+      "definicion": "Un asset conserva contenido inmutable y huella SHA-256 calculada en streaming; varias instancias referencian la misma fuente. Un cambio de montaje nunca reescribe el original."
+    },
+    {
+      "id": "RN-05",
+      "titulo": "Compatibilidad explicita",
+      "definicion": "Detectar codec, no inferirlo de la extension. M1 se evalua en Windows 11 + Chromium de escritorio con servicio local; otros entornos son experimentales hasta probarse."
+    },
+    {
+      "id": "RN-06",
+      "titulo": "Tipos de pista",
+      "definicion": "Una pista visual admite video, imagen o titulo; audio va en pistas de audio. Importar video con sonido crea instancias V/A vinculadas en pistas libres. Sin sitio para ambas se solicita ubicacion, sin perder sonido."
+    },
+    {
+      "id": "RN-07",
+      "titulo": "Colisiones",
+      "definicion": "En M1 los clips de una misma pista no se solapan. Un movimiento o trim que colisiona se rechaza. Clips de diferentes pistas si pueden coincidir y se componen/mezclan."
+    },
+    {
+      "id": "RN-08",
+      "titulo": "Composicion",
+      "definicion": "V1 es fondo y V4 la superior. Componer de abajo arriba con alfa; zonas sin video son negras y sin audio son silencio. Pistas ocultas/silenciadas no contribuyen al render."
+    },
+    {
+      "id": "RN-09",
+      "titulo": "Edicion por limites",
+      "definicion": "Duracion minima: un frame del proyecto. Split solo en inicio < cabezal < fin. Trim conserva la posicion de vecinos. Entradas numericas y arrastre comparten el mismo comando validado."
+    },
+    {
+      "id": "RN-10",
+      "titulo": "Preview frente a maestro",
+      "definicion": "Los proxies son derivados. El resultado final usa originales o intermedios de calidad. Un seek se considera realizado al presentar el frame solicitado, con indicador si esta pendiente."
+    },
+    {
+      "id": "RN-11",
+      "titulo": "Vinculo de audio",
+      "definicion": "Un par vinculado conserva asset, rangos fuente y offset temporal. Split/move/trim actuan sobre el grupo salvo desvinculacion explicita. Desvincular no genera copia ni mezcla duplicada."
+    },
+    {
+      "id": "RN-12",
+      "titulo": "Cierre de hueco",
+      "definicion": "Ripple actua sobre un intervalo y conjunto explicito de pistas; desplaza clips completamente posteriores. Si cruza clips, pistas bloqueadas o vinculos externos incompatibles, la operacion se rechaza y se explica."
+    },
+    {
+      "id": "RN-13",
+      "titulo": "Cadena de audio",
+      "definicion": "Decodificar -> remuestrear 48 kHz -> rango -> ganancia -> fundidos -> mezcla -> limitador final a -1 dBTP -> AAC o WAV. El control de monitor solo cambia escucha. Registrar que el limitador puede alterar picos."
+    },
+    {
+      "id": "RN-14",
+      "titulo": "Cadena visual",
+      "definicion": "Orientacion fuente -> rango temporal -> escala/crop -> correccion basica -> transformacion en lienzo -> opacidad/fades -> composicion por pistas -> titulos segun su orden -> codificacion SDR Rec.709. Definir politicas de rango y gamma en el spike."
+    },
+    {
+      "id": "RN-15",
+      "titulo": "Comandos atomicos",
+      "definicion": "Un gesto confirmado equivale a un comando validado y reversible. Si falla una condicion se rechaza todo el comando. Guardado durable y estado de historial son conceptos separados."
+    },
+    {
+      "id": "RN-16",
+      "titulo": "Versionado y durabilidad",
+      "definicion": "Guardar con revision esperada, escribir temporal y publicar mediante reemplazo atomico. Conservar revision previa valida y snapshots. Un manifiesto exportado no incluye medios."
+    },
+    {
+      "id": "RN-17",
+      "titulo": "Exportacion consistente",
+      "definicion": "Cada job fija revision inmutable y ajustes. Validar recursos antes de iniciar; el progreso refleja tiempo procesado, no garantiza ETA. Finalizar exige inspeccion y publicacion atomica; no sobrescribir sin accion explicita."
+    },
+    {
+      "id": "RN-18",
+      "titulo": "Jobs y concurrencia",
+      "definicion": "Un render activo por equipo en M1; proxies con concurrencia maxima 2 configurable. Solicitudes usan idempotency key. Cancelacion/fallo son terminales; reintento crea job nuevo. Edicion puede continuar sobre revision posterior."
+    },
+    {
+      "id": "RN-19",
+      "titulo": "Almacenamiento administrado",
+      "definicion": "El servicio administra medios importados, cache, proxies y renders en directorios separados. Cache usa claves versionadas, cuota configurable y leases. Se monitoriza espacio antes y durante tareas."
+    },
+    {
+      "id": "RN-20",
+      "titulo": "Interaccion accesible",
+      "definicion": "Toda accion de arrastre tiene alternativa por teclado y por click sin arrastre. No depender solo de color. Jeni es decorativa, ocultable y respeta movimiento reducido."
+    },
+    {
+      "id": "RN-21",
+      "titulo": "Funciones opcionales",
+      "definicion": "Ningun servicio externo recibe medios sin una decision posterior explicita. Funciones M3 requieren requisitos detallados antes de entrar en desarrollo."
+    },
+    {
+      "id": "RN-22",
+      "titulo": "Limites del servicio local",
+      "definicion": "Bind loopback por defecto, origen/Host permitidos y token de sesion. Construir argumentos de procesos sin shell; resolver rutas dentro de raices autorizadas y controlar recursos de cada tarea."
+    }
+  ],
+  "calidad": [
+    {
+      "id": "RNF-01",
+      "titulo": "Respuesta de interaccion",
+      "categoria": "Rendimiento",
+      "meta": "En corpus C1, p95 <=100 ms para seleccion, mover, split y undo; medir desde entrada hasta actualizacion visual confirmada, 100 acciones por tipo, cache caliente.",
+      "metodo": "Trazas del navegador; excluir decodificacion del frame solo cuando el indicador pendiente sea visible.",
+      "requisitos": [
+        "RF-09",
+        "RF-12",
+        "RF-13",
+        "RF-25"
+      ],
+      "prueba": "PQ-01",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-02",
+      "titulo": "Seek de preview",
+      "categoria": "Rendimiento",
+      "meta": "En C1 y proxy listo, p95 <=300 ms al presentar frame objetivo tras 100 seeks aleatorios; probar al menos 2V+2A.",
+      "metodo": "Registrar frame solicitado/presentado y timestamps; no medir solo cambio del cabezal.",
+      "requisitos": [
+        "RF-10",
+        "RF-52"
+      ],
+      "prueba": "PQ-02",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-03",
+      "titulo": "Reproduccion sostenida",
+      "categoria": "Rendimiento",
+      "meta": "En C1, preview 720p30 con 2V+2A durante 60 s, frames perdidos <=2% y desfase A/V <=40 ms. Para 4V+4A se admite degradacion explicita y pausa de fidelidad.",
+      "metodo": "Contador de presentaciones, impulsos/flash sincronizados y captura de referencia.",
+      "requisitos": [
+        "RF-10",
+        "RF-52"
+      ],
+      "prueba": "PQ-03",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-04",
+      "titulo": "Rendimiento de exportacion",
+      "categoria": "Rendimiento",
+      "meta": "Meta inicial: exportar C1 de 60 s a 1080p30 H.264 en <=180 s en H1, CPU solamente. Es objetivo por validar, no capacidad demostrada.",
+      "metodo": "Cinco ejecuciones; reportar mediana/p95, preset, bitrate, version binaria, max RSS y temperatura.",
+      "requisitos": [
+        "RF-28",
+        "RF-29",
+        "RF-30"
+      ],
+      "prueba": "PQ-04",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-05",
+      "titulo": "Perdida maxima de edicion",
+      "categoria": "Fiabilidad",
+      "meta": "Con servicio y disco operativos, tras matar pestaña o proceso en 30 puntos, recuperar ultima revision confirmada y perder como maximo 10 s de comandos confirmados aun no persistidos.",
+      "metodo": "Fault injection y comparacion de revision/manifest; fallas de disco se reportan sin falsa promesa.",
+      "requisitos": [
+        "RF-26",
+        "RF-27",
+        "RF-54"
+      ],
+      "prueba": "PQ-05",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-06",
+      "titulo": "Integridad de originales",
+      "categoria": "Integridad",
+      "meta": "SHA-256 de los originales antes y despues de la suite de edicion/exportacion coincide en el 100% de casos.",
+      "metodo": "Comparar hashes; cache y outputs deben estar en otras rutas.",
+      "requisitos": [
+        "RF-11",
+        "RF-12",
+        "RF-20",
+        "RF-21"
+      ],
+      "prueba": "PQ-06",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-07",
+      "titulo": "Sincronizacion del render",
+      "categoria": "Correctitud",
+      "meta": "En salida de 10 min con flash y click cada 30 s, error A/V <=1 frame del proyecto (33.34 ms) y sin deriva creciente; duracion video difiere <=1 frame.",
+      "metodo": "Analisis de fotogramas y muestras del archivo final; comprobar padding AAC por timestamps.",
+      "requisitos": [
+        "RF-16",
+        "RF-28",
+        "RF-30",
+        "RF-52"
+      ],
+      "prueba": "PQ-07",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-08",
+      "titulo": "Recuperacion de almacenamiento",
+      "categoria": "Fiabilidad",
+      "meta": "Con disco lleno, permiso revocado o medio desconectado no se publica salida parcial ni se pierde la ultima revision valida.",
+      "metodo": "Inyectar tres fallas y reabrir; limpiar temporales solo cuando no estan en uso.",
+      "requisitos": [
+        "RF-26",
+        "RF-27",
+        "RF-30",
+        "RF-34"
+      ],
+      "prueba": "PQ-08",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-09",
+      "titulo": "Privacidad de contenido",
+      "categoria": "Privacidad",
+      "meta": "En el flujo M1 completo no hay solicitudes a terceros ni telemetria; fuentes, medios y modelos instalados se sirven localmente.",
+      "metodo": "Capturar trafico DNS/HTTP y operar sin internet tras instalacion; las copias viven en el host del servicio.",
+      "requisitos": [
+        "RF-03",
+        "RF-23",
+        "RF-37",
+        "RF-51"
+      ],
+      "prueba": "PQ-09",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-10",
+      "titulo": "Servicio y archivos protegidos",
+      "categoria": "Seguridad",
+      "meta": "Rechazar origen/Host no permitido, token ausente, traversal, nombre con metacaracteres e intento de inyeccion; limites de archivo y recursos activos.",
+      "metodo": "Pruebas negativas de API, jobs y rutas; archivos importados se tratan como no confiables.",
+      "requisitos": [
+        "RF-04",
+        "RF-33",
+        "RF-51"
+      ],
+      "prueba": "PQ-10",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-11",
+      "titulo": "Teclado y sin arrastre",
+      "categoria": "Accesibilidad",
+      "meta": "Completar importar, agregar, mover, recortar, dividir, guardar y exportar solo con teclado; repetir mover/agregar por click sin mantener pulsado.",
+      "metodo": "Prueba manual con foco visible, orden logico y retorno de foco tras dialogo.",
+      "requisitos": [
+        "RF-03",
+        "RF-11",
+        "RF-13",
+        "RF-35"
+      ],
+      "prueba": "PQ-11",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-12",
+      "titulo": "Contraste y legibilidad",
+      "categoria": "Accesibilidad",
+      "meta": "Objetivo WCAG 2.2 AA: texto normal >=4.5:1, texto grande >=3:1 y componentes/foco >=3:1; no afirmar conformidad sin auditoria completa.",
+      "metodo": "Medicion en ambos temas; texto esencial >=12 px en editor, dialogos 14-16 px; zoom 200% conserva tareas por paneles alternativos.",
+      "requisitos": [
+        "RF-36",
+        "RF-37"
+      ],
+      "prueba": "PQ-12",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-13",
+      "titulo": "Compatibilidad certificada",
+      "categoria": "Compatibilidad",
+      "meta": "Pasar corpus C1/C2 en dos versiones estables de Chromium objetivo y H1; persistir la matriz exacta de SO, navegador, FFmpeg y codecs probados.",
+      "metodo": "No usar latest como version reproducible; repetir antes de cada release.",
+      "requisitos": [
+        "RF-04",
+        "RF-38"
+      ],
+      "prueba": "PQ-13",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-14",
+      "titulo": "Uso de memoria",
+      "categoria": "Eficiencia",
+      "meta": "En C1 despues de 10 min, pestaña <=1.5 GiB RSS y conjunto de workers nativos <=4 GiB RSS, sin crecimiento >10% entre ciclos 2 y 5 de abrir/cerrar.",
+      "metodo": "Medicion SO por procesos, no solo heap JS; 4V+4A se caracteriza aparte.",
+      "requisitos": [
+        "RF-05",
+        "RF-34",
+        "RF-52"
+      ],
+      "prueba": "PQ-14",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-15",
+      "titulo": "Exportacion repetible",
+      "categoria": "Correctitud",
+      "meta": "La misma revision y ajustes produce equivalencia temporal y visual/audio dentro de tolerancias del corpus; no se exige SHA identico por metadatos o encoder.",
+      "metodo": "Comparar frames y PCM decodificados; color objetivo SSIM >=0.98 frente a referencia certificada, excluyendo fuentes diferentes.",
+      "requisitos": [
+        "RF-21",
+        "RF-23",
+        "RF-28"
+      ],
+      "prueba": "PQ-15",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-16",
+      "titulo": "Mantenibilidad",
+      "categoria": "Mantenibilidad",
+      "meta": "Motor de comandos sin dependencias del DOM; esquema y contratos versionados; invariantes temporales cubiertas por propiedades y fixtures; CI impide fixtures fallidos.",
+      "metodo": "Revision de dependencias y suite de round-trip, split/undo, colisiones y render golden. Sin cuota arbitraria de cobertura como unica evidencia.",
+      "requisitos": [
+        "RF-12",
+        "RF-25",
+        "RF-33"
+      ],
+      "prueba": "PQ-16",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-17",
+      "titulo": "Cancelacion y reconexion",
+      "categoria": "Operabilidad",
+      "meta": "Cancelacion reconoce solicitud <=1 s y termina worker <=5 s en H1; reconectar recupera estado sin doble job ni perdida del resultado.",
+      "metodo": "Desconectar UI, cancelar trabajos y simular caida del worker; comprobar locks y temporales.",
+      "requisitos": [
+        "RF-29",
+        "RF-49"
+      ],
+      "prueba": "PQ-17",
+      "estado": "No ejecutada"
+    },
+    {
+      "id": "RNF-18",
+      "titulo": "Aprendizaje del flujo",
+      "categoria": "Usabilidad",
+      "meta": "Jeancarlo completa el guion U1 con cinco clips, split, desvincular, titulo y exportar en <=15 min sin ayuda externa tras una orientacion de 2 min.",
+      "metodo": "Sesion observada, medir errores y retrocesos; es criterio personal de aceptacion, no estudio estadistico.",
+      "requisitos": [
+        "RF-07",
+        "RF-12",
+        "RF-16",
+        "RF-23",
+        "RF-28"
+      ],
+      "prueba": "PQ-18",
+      "estado": "No ejecutada"
+    }
+  ],
+  "flujos": [
+    {
+      "id": "FL-01",
+      "titulo": "Inicio y proyecto",
+      "ruta": "UI-01 -> UI-02 -> UI-04",
+      "principal": "Elegir Nuevo proyecto; nombrar, seleccionar formato y confirmar; mostrar editor vacio y guardado inicial.",
+      "alternativas": "Proyecto existente: abrirlo. Servicio ausente: mostrar diagnostico y reintento. Segunda sesion: abrir solo lectura.",
+      "requisitos": [
+        "RF-01",
+        "RF-02",
+        "RF-50",
+        "RF-54"
+      ]
+    },
+    {
+      "id": "FL-02",
+      "titulo": "Importar y preparar",
+      "ruta": "UI-04 -> UI-03 -> UI-04",
+      "principal": "Seleccionar o arrastrar lote; copiar a almacenamiento administrado, inspeccionar, mostrar errores individuales y crear derivados.",
+      "alternativas": "Duplicado: reutilizar asset por hash y dejar trazabilidad; codec no certificado: marcar incompatible o solicitar conversion cuando este disponible; cancelar conserva resto.",
+      "requisitos": [
+        "RF-03",
+        "RF-04",
+        "RF-05",
+        "RF-06",
+        "RF-52"
+      ]
+    },
+    {
+      "id": "FL-03",
+      "titulo": "Montar y editar",
+      "ruta": "UI-04 -> UI-05 -> UI-04",
+      "principal": "Agregar a pista libre; seleccionar; posicionar cabezal; dividir o recortar; mover; comprobar resultado; deshacer si procede.",
+      "alternativas": "Colision: rechazar y resaltar destino. Vinculo/bloqueo: actuar atomico. Ripple: elegir intervalo y pistas; preflight y vista previa del efecto temporal.",
+      "requisitos": [
+        "RF-07",
+        "RF-08",
+        "RF-09",
+        "RF-10",
+        "RF-11",
+        "RF-12",
+        "RF-13",
+        "RF-14",
+        "RF-15",
+        "RF-25",
+        "RF-39",
+        "RF-40"
+      ]
+    },
+    {
+      "id": "FL-04",
+      "titulo": "Trabajar audio",
+      "ruta": "UI-05 -> UI-06 -> UI-04",
+      "principal": "Seleccionar par V/A; desvincular cuando se necesite; mover audio, ajustar ganancia y fundidos; escuchar mezcla; opcionalmente extraer WAV.",
+      "alternativas": "Sin stream de audio: deshabilitar extraccion. Evitar audio duplicado; avisar de clipping y mantener politica de limitacion final visible.",
+      "requisitos": [
+        "RF-16",
+        "RF-17",
+        "RF-18",
+        "RF-19"
+      ]
+    },
+    {
+      "id": "FL-05",
+      "titulo": "Componer y aplicar efectos",
+      "ruta": "UI-05 -> UI-07 -> UI-04",
+      "principal": "Seleccionar clip; transformar; ajustar brillo/contraste/saturacion; configurar fade; agregar titulo o imagen en pista superior.",
+      "alternativas": "Datos invalidos: no aplicar. Texto fuera de lienzo: aviso. Desactivar efecto compara antes/despues sin perder parametros.",
+      "requisitos": [
+        "RF-20",
+        "RF-21",
+        "RF-22",
+        "RF-23",
+        "RF-24"
+      ]
+    },
+    {
+      "id": "FL-06",
+      "titulo": "Guardar y recuperar",
+      "ruta": "UI-04 -> UI-10 -> UI-04",
+      "principal": "Confirmar cambios; guardar revision; mantener snapshot; al reabrir comparar ultima revision valida y ofrecer recuperacion cuando sea necesario.",
+      "alternativas": "Disco lleno: indicar Sin guardar y exportar manifiesto. Copia corrupta: retroceder a revision valida; manifiesto sin medios: relocalizar.",
+      "requisitos": [
+        "RF-26",
+        "RF-27",
+        "RF-32",
+        "RF-48",
+        "RF-54"
+      ]
+    },
+    {
+      "id": "FL-07",
+      "titulo": "Exportar resultado",
+      "ruta": "UI-04 -> UI-08 -> UI-09 -> UI-12",
+      "principal": "Fijar revision; elegir preset/ruta; ejecutar preflight; encolar render; seguir progreso; inspeccionar y publicar; abrir o descargar.",
+      "alternativas": "Cancelar, fallar o desconectar tienen estados distintos. Reintento es job nuevo; si se edito durante render indicar revision exportada.",
+      "requisitos": [
+        "RF-28",
+        "RF-29",
+        "RF-30",
+        "RF-49"
+      ]
+    },
+    {
+      "id": "FL-08",
+      "titulo": "Resolver medios",
+      "ruta": "UI-10 -> UI-03 -> UI-04",
+      "principal": "Detectar referencias ausentes; elegir archivos; comparar identidad; aceptar sustitucion si procede; revalidar todas las instancias.",
+      "alternativas": "No aceptar homonimos automaticamente; si fuente mas corta, listar clips fuera de rango y bloquear exportacion hasta resolver.",
+      "requisitos": [
+        "RF-31",
+        "RF-33"
+      ]
+    },
+    {
+      "id": "FL-09",
+      "titulo": "Preferencias y soporte",
+      "ruta": "UI-04 -> UI-11 -> UI-04",
+      "principal": "Consultar almacenamiento y diagnostico; limpiar cache regenerable; ajustar tema, escala, atajos y visibilidad de Jeni.",
+      "alternativas": "Limpieza respeta tareas activas; una preferencia de UI no altera video final; no perder montaje al cerrar preferencias.",
+      "requisitos": [
+        "RF-34",
+        "RF-35",
+        "RF-36",
+        "RF-37",
+        "RF-38",
+        "RF-51"
+      ]
+    }
+  ],
+  "pantallas": [
+    {
+      "id": "UI-01",
+      "titulo": "Proyectos",
+      "contenido": "Lista de proyectos recientes, Nuevo proyecto, buscar, duplicar y papelera. Jeni solo en vacio.",
+      "requisitos": [
+        "RF-01",
+        "RF-02",
+        "RF-50"
+      ]
+    },
+    {
+      "id": "UI-02",
+      "titulo": "Nuevo proyecto",
+      "contenido": "Nombre, formato, fps M1 fijo visible, ubicacion administrada y Crear. Cancelar vuelve a la lista.",
+      "requisitos": [
+        "RF-01",
+        "RF-51"
+      ]
+    },
+    {
+      "id": "UI-03",
+      "titulo": "Importacion",
+      "contenido": "Lote con estado individual, detalles de codec, progreso, cancelar por archivo y resultado parcial.",
+      "requisitos": [
+        "RF-03",
+        "RF-04",
+        "RF-05",
+        "RF-52"
+      ]
+    },
+    {
+      "id": "UI-04",
+      "titulo": "Editor principal",
+      "contenido": "Biblioteca izquierda; visor central; inspector derecho; timeline inferior; barra superior con revision y Exportar.",
+      "requisitos": [
+        "RF-07",
+        "RF-08",
+        "RF-09",
+        "RF-10",
+        "RF-26",
+        "RF-39"
+      ]
+    },
+    {
+      "id": "UI-05",
+      "titulo": "Edicion de clip",
+      "contenido": "Seleccion, campos inicio/IN/OUT, botones Dividir, Duplicar, Eliminar y Cerrar hueco; grupos y bloqueo visibles.",
+      "requisitos": [
+        "RF-11",
+        "RF-12",
+        "RF-13",
+        "RF-14",
+        "RF-15",
+        "RF-25",
+        "RF-40"
+      ]
+    },
+    {
+      "id": "UI-06",
+      "titulo": "Audio",
+      "contenido": "Vinculo, ganancia, silencio, fundidos, forma de onda, medidor de mezcla y Extraer WAV.",
+      "requisitos": [
+        "RF-16",
+        "RF-17",
+        "RF-18",
+        "RF-19"
+      ]
+    },
+    {
+      "id": "UI-07",
+      "titulo": "Inspector visual",
+      "contenido": "Transformacion, color, opacidad/fades; titulo y superposicion; secciones futuras M2 fuera de los controles M1.",
+      "requisitos": [
+        "RF-20",
+        "RF-21",
+        "RF-22",
+        "RF-23",
+        "RF-24"
+      ]
+    },
+    {
+      "id": "UI-08",
+      "titulo": "Exportacion",
+      "contenido": "Revision fijada, preset, resolucion, fps, destino, estimacion y lista de preflight.",
+      "requisitos": [
+        "RF-28"
+      ]
+    },
+    {
+      "id": "UI-09",
+      "titulo": "Render y trabajos",
+      "contenido": "Estado real, progreso, cancelar, reintentar tras fallo, revision y enlace a resultado verificado.",
+      "requisitos": [
+        "RF-29",
+        "RF-30",
+        "RF-49"
+      ]
+    },
+    {
+      "id": "UI-10",
+      "titulo": "Recuperacion y relocalizacion",
+      "contenido": "Revision durable, copia previa, conflictos, manifiesto, medios ausentes y accion de localizar.",
+      "requisitos": [
+        "RF-27",
+        "RF-31",
+        "RF-32",
+        "RF-33",
+        "RF-54"
+      ]
+    },
+    {
+      "id": "UI-11",
+      "titulo": "Preferencias y diagnostico",
+      "contenido": "Tema, movimiento, escala, atajos, uso de disco, cache y perfil compatible.",
+      "requisitos": [
+        "RF-34",
+        "RF-35",
+        "RF-36",
+        "RF-38",
+        "RF-51"
+      ]
+    },
+    {
+      "id": "UI-12",
+      "titulo": "Resultado y feedback",
+      "contenido": "Confirmacion con nombre, revision, formato y Abrir carpeta; error con causa, recuperacion y Jeni opcional.",
+      "requisitos": [
+        "RF-30",
+        "RF-37"
+      ]
+    }
+  ],
+  "fuentes": [
+    [
+      "S-01",
+      "MDN - WebCodecs API",
+      "https://developer.mozilla.org/en-US/docs/Web/API/WebCodecs_API",
+      "WebCodecs ofrece codificacion/decodificacion; el contenedor requiere tratamiento adicional. No se presupone un editor completo por disponer de la API."
+    ],
+    [
+      "S-02",
+      "MDN - Storage quotas and eviction",
+      "https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria",
+      "El almacenamiento de origen esta sujeto a cuotas y politicas de eliminacion; la cache del navegador no se define como respaldo unico."
+    ],
+    [
+      "S-03",
+      "FFmpeg - Filters",
+      "https://ffmpeg.org/ffmpeg-filters.html",
+      "Referencia de operaciones de filtrado. La paridad entre preview y render debe demostrarse en un spike."
+    ],
+    [
+      "S-04",
+      "W3C - Dragging movements",
+      "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements",
+      "La alternativa al arrastre requiere operacion de puntero sin arrastre; el teclado tambien se contempla y no sustituye esa alternativa."
+    ],
+    [
+      "S-05",
+      "Chrome - File System Access",
+      "https://developer.chrome.com/docs/capabilities/web-apis/file-system-access",
+      "El acceso a archivos desde el navegador requiere permisos y capacidades del entorno; el servicio administrado evita depender exclusivamente de handles persistentes."
+    ],
+    [
+      "S-06",
+      "W3C - WCAG 2.2",
+      "https://www.w3.org/TR/WCAG22/",
+      "Base del objetivo de accesibilidad; la especificacion del producto no acredita por si misma conformidad."
+    ],
+    [
+      "S-07",
+      "Google Fonts - Manrope",
+      "https://github.com/google/fonts/tree/main/ofl/manrope",
+      "Fuente y licencia de la tipografia de marca."
+    ],
+    [
+      "S-08",
+      "Google Fonts - Inter",
+      "https://github.com/google/fonts/tree/main/ofl/inter",
+      "Fuente y licencia de la tipografia de interfaz."
+    ]
+  ]
+}

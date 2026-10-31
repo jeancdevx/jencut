@@ -1,0 +1,11 @@
+{
+  "note": "Mapa de entradas del paquete; el servicio debe administrarlas al importar.",
+  "assets": [
+    {
+      "assetId": "asset-smoke-01",
+      "source": "fixtures/smoke/clip-with-audio.mp4",
+      "managedRelativePath": "originals/clip-with-audio.mp4",
+      "sha256": "156be3a45f19513bf12dd8a99584d4c2f7217b15cd000a6cf8684c25d1dc7de7"
+    }
+  ]
+}

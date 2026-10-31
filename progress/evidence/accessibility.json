@@ -1,0 +1,42 @@
+{
+  "projects": {
+    "violations": [],
+    "passes": 24
+  },
+  "editor": {
+    "violations": [],
+    "passes": 25
+  },
+  "geometry-1440": {
+    "clip": {
+      "x": 193,
+      "y": 653.046875,
+      "width": 619,
+      "height": 48
+    },
+    "play": {
+      "x": 389,
+      "y": 494.046875,
+      "width": 32,
+      "height": 32
+    }
+  },
+  "geometry-1280": {
+    "clip": {
+      "x": 193,
+      "y": 542,
+      "width": 539,
+      "height": 48
+    },
+    "play": {
+      "x": 532,
+      "y": 397,
+      "width": 32,
+      "height": 32
+    }
+  },
+  "export": {
+    "violations": [],
+    "passes": 26
+  }
+}
