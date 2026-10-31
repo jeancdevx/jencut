@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "id": "project-smoke-01",
+  "name": "Prueba inicial de Jencut",
+  "revision": 0,
+  "fps": {
+    "num": 30,
+    "den": 1
+  },
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "colorSpace": "rec709-sdr"
+  },
+  "assets": [
+    {
+      "id": "asset-smoke-01",
+      "kind": "video",
+      "contentHash": "156be3a45f19513bf12dd8a99584d4c2f7217b15cd000a6cf8684c25d1dc7de7",
+      "managedRelativePath": "originals/clip-with-audio.mp4",
+      "streams": [
+        {
+          "index": 0,
+          "type": "video",
+          "codec": "h264",
+          "timeBase": {
+            "num": 1,
+            "den": 15360
+          },
+          "durationPTS": 46080,
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "index": 1,
+          "type": "audio",
+          "codec": "aac",
+          "timeBase": {
+            "num": 1,
+            "den": 48000
+          },
+          "durationPTS": 144000,
+          "sampleRate": 48000,
+          "channels": 2
+        }
+      ],
+      "rotationDegrees": 0,
+      "colorSpace": "rec709-sdr"
+    }
+  ],
+  "tracks": [
+    {
+      "id": "track-v1",
+      "kind": "visual",
+      "order": 0,
+      "name": "Video",
+      "locked": false,
+      "hidden": false,
+      "muted": false,
+      "clips": [
+        {
+          "id": "clip-video-01",
+          "kind": "video",
+          "trackId": "track-v1",
+          "startFrame": 0,
+          "durationFrames": 90,
+          "assetId": "asset-smoke-01",
+          "streamIndex": 0,
+          "sourceInPTS": 0,
+          "sourceTimeBase": {
+            "num": 1,
+            "den": 15360
+          },
+          "linkGroupId": "link-smoke-01",
+          "effects": {}
+        }
+      ]
+    },
+    {
+      "id": "track-v2",
+      "kind": "visual",
+      "order": 1,
+      "name": "Títulos",
+      "locked": false,
+      "hidden": false,
+      "muted": false,
+      "clips": [
+        {
+          "id": "clip-title-01",
+          "kind": "title",
+          "trackId": "track-v2",
+          "startFrame": 15,
+          "durationFrames": 60,
+          "linkGroupId": null,
+          "effects": {
+            "transform": {
+              "x": 100,
+              "y": 800,
+              "scalePercent": 100,
+              "rotationDegrees": 0,
+              "opacity": 1
+            }
+          },
+          "title": {
+            "text": "Jencut · prueba de montaje",
+            "fontFamily": "Manrope",
+            "fontSizePx": 64,
+            "weight": 700,
+            "color": "#FFFFFF",
+            "align": "left",
+            "lineHeight": 1.1
+          }
+        }
+      ]
+    },
+    {
+      "id": "track-a1",
+      "kind": "audio",
+      "order": 0,
+      "name": "Audio original",
+      "locked": false,
+      "hidden": false,
+      "muted": false,
+      "clips": [
+        {
+          "id": "clip-audio-01",
+          "kind": "audio",
+          "trackId": "track-a1",
+          "startFrame": 0,
+          "durationFrames": 90,
+          "assetId": "asset-smoke-01",
+          "streamIndex": 1,
+          "sourceInPTS": 0,
+          "sourceTimeBase": {
+            "num": 1,
+            "den": 48000
+          },
+          "linkGroupId": "link-smoke-01",
+          "effects": {}
+        }
+      ]
+    }
+  ],
+  "linkGroups": [
+    {
+      "id": "link-smoke-01",
+      "memberClipIds": [
+        "clip-video-01",
+        "clip-audio-01"
+      ]
+    }
+  ]
+}
