@@ -1,0 +1,14 @@
+
+> jencut@0.1.0 test:e2e /home/jeancdevx/dev/jencut
+> playwright test
+
+
+Running 3 tests using 1 worker
+
+(node:277005) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/e2e/editor.spec.ts:13:1 › H1 through real UI: import, preview, split, undo/redo, trim, reopen and inspected MP4 (28.2s)
+  ✓  2 tests/e2e/editor.spec.ts:227:1 › keyboard dialogs, real editor accessibility and desktop geometry (14.8s)
+  ✓  3 tests/e2e/editor.spec.ts:325:1 › H2 increment: tracks, atomic lock rejection, resource menu and independent project copy (14.1s)
+
+  3 passed (58.5s)

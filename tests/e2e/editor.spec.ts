@@ -53,13 +53,14 @@ test('H1 through real UI: import, preview, split, undo/redo, trim, reopen and in
   await expect(page).toHaveURL(/\?project=/)
   const url = page.url(),
     id = new URL(url).searchParams.get('project')!
+  const fileChooser = page.waitForEvent('filechooser')
 
   await page
-    .getByLabel('Seleccionar medios')
-    .setInputFiles([
-      fixtures + 'invalid-media.mp4',
-      fixtures + 'clip-with-audio.mp4'
-    ])
+    .getByRole('button', { name: 'Importar archivos', exact: true })
+    .click()
+  await (
+    await fileChooser
+  ).setFiles([fixtures + 'invalid-media.mp4', fixtures + 'clip-with-audio.mp4'])
   await expect(page.locator('.asset')).toHaveCount(1)
   await expect(
     page.getByRole('button', { name: 'Importar archivos' })
@@ -385,9 +386,12 @@ test('H2 increment: tracks, atomic lock rejection, resource menu and independent
   await page
     .getByRole('button', { name: 'Desbloquear Audio original', exact: true })
     .click()
+  const fileChooser = page.waitForEvent('filechooser')
+
   await page
-    .getByLabel('Seleccionar medios')
-    .setInputFiles(fixtures + 'audio-44100-mono.wav')
+    .getByRole('button', { name: 'Importar archivos', exact: true })
+    .click()
+  await (await fileChooser).setFiles(fixtures + 'audio-44100-mono.wav')
   await expect(page.locator('.asset')).toHaveCount(2)
   await expect(
     page.getByRole('button', { name: 'Importar archivos' })

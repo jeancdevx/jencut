@@ -164,3 +164,14 @@ oficial 2.103.3, con SHA-256 del release comprobado, en
 [PR #1](https://github.com/jeancdevx/jencut/pull/1) con base `develop` y método
 de integración merge commit. CI verifica los commits, el título de la PR y los
 recorridos reales antes de la integración.
+
+El runner de CI detectó una carrera en el recorrido H2: `setInputFiles` podía
+disparar el cambio del input oculto mientras se guardaba el desbloqueo de una
+pista. La traza muestra que no se enviaba ningún POST de importación. El test
+ahora abre el selector mediante el botón real «Importar archivos», cuya
+habilitación espera Playwright antes de seleccionar el WAV. Esta corrección se
+mantiene en un commit específico del recorrido E2E.
+
+Los tres recorridos pasan con el selector real en ambas importaciones; el log
+local está en `progress/evidence/e2e-import-controls.txt`. Los snapshots y
+capturas publicados anteriormente se conservan como evidencia de su ejecución.
