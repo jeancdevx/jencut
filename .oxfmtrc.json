@@ -1,0 +1,61 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "astro": true,
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "htmlWhitespaceSensitivity": "css",
+  "jsxSingleQuote": true,
+  "printWidth": 80,
+  "proseWrap": "always",
+  "quoteProps": "as-needed",
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "useTabs": false,
+  "sortImports": {
+    "order": "asc",
+    "ignoreCase": false,
+    "newlinesBetween": true,
+    "internalPattern": ["@/"],
+    "sortSideEffects": false,
+    "groups": [
+      ["builtin", "type-builtin"],
+      ["external", "type-external"],
+      ["internal", "type-internal", "subpath", "type-subpath"],
+      ["parent", "type-parent"],
+      ["sibling", "type-sibling", "index", "type-index"],
+      "style",
+      "unknown"
+    ]
+  },
+  "ignorePatterns": [
+    "jencut-codex-starter-v1/**",
+    "reference/**",
+    "specification/**",
+    "fixtures/**",
+    "assets/**",
+    "design/**",
+    "handoff/**",
+    ".agents/**",
+    ".codex/**",
+    ".taste-skill/**",
+    "public/**",
+    "**/dist/**",
+    "**/.astro/**",
+    "pnpm-lock.yaml",
+    "skills-lock.json",
+    "AGENTS.md",
+    "docs/current/STARTER*",
+    "SHA256SUMS.txt",
+    "PACK*.json",
+    "test-results/**",
+    "playwright-report/**",
+    "progress/evidence/**",
+    ".jencut/**",
+    "docs/context/**"
+  ],
+  "sortTailwindcss": {
+    "stylesheet": "./src/styles/global.css"
+  }
+}
