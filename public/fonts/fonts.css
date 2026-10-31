@@ -1,0 +1,3 @@
+/* Familias locales de Jencut. Ajustar URLs al copiar a la carpeta pública del cliente. */
+@font-face { font-family: "Manrope"; src: url("./Manrope-Variable.ttf") format("truetype"); font-weight: 200 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("./Inter-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
