@@ -1,0 +1,76 @@
+
+> jencut@0.1.0 verify /home/jeancdevx/dev/jencut
+> pnpm lint && pnpm format:check && pnpm check && pnpm test && pnpm build
+
+
+> jencut@0.1.0 lint /home/jeancdevx/dev/jencut
+> oxlint --deny-warnings .
+
+
+> jencut@0.1.0 format:check /home/jeancdevx/dev/jencut
+> oxfmt --check .
+
+Checking formatting...
+
+All matched files use the correct format.
+Finished in 945ms on 82 files using 16 threads.
+
+> jencut@0.1.0 check /home/jeancdevx/dev/jencut
+> tsc --noEmit && astro check
+
+20:17:39 [types] Generated 96ms
+20:17:39 [check] Getting diagnostics for Astro files in /home/jeancdevx/dev/jencut...
+Result (45 files): 
+- 0 errors
+- 0 warnings
+- 0 hints
+
+
+> jencut@0.1.0 test /home/jeancdevx/dev/jencut
+> tsx --test tests/domain.test.ts tests/service.test.ts
+
+✔ create validates name, ratio and unique IDs (2.850443ms)
+✔ split preserves complementary rational source ranges and synchronized links (3.864481ms)
+✔ trim acts on linked group, preserves neighbors, rejects zero and out of source (0.942223ms)
+✔ split boundaries and fractional commands are rejected (0.678016ms)
+✔ collision and locked members reject entire move atomically (1.100551ms)
+✔ duplicate creates internal links without modifying original or bytes (0.545646ms)
+✔ ripple rejects crossing clips and moves participating tracks conservatively (0.922236ms)
+✔ four tracks per kind and 50 clips are hard limits (0.604978ms)
+✔ track reorder renumbers peers, and unused resource removal is reversible (0.990364ms)
+✔ project duplication shares immutable assets and allocates independent montage references (1.136739ms)
+H1 verified: {"projectId":"3e26b471-320e-4211-9da5-f0591df1f19b","revision":10,"inspection":{"duration":3,"frames":90,"width":1280,"height":720,"video":"h264","audio":"aac","sampleRate":48000},"originalHash":"156be3a45f19513bf12dd8a99584d4c2f7217b15cd000a6cf8684c25d1dc7de7"}
+✔ real import, editing, durable reopen, worker render, inspected output and failures (6467.460487ms)
+SP-03 verified: {"inputs":["clip-no-audio.mp4","audio-44100-mono.wav","music-48000.wav","overlay-alpha.png"],"inspection":{"duration":3,"frames":90,"width":1280,"height":720,"video":"h264","audio":"aac","sampleRate":48000},"png":"import only; alpha composition parity pending H3"}
+✔ SP-03 corpus: silent H.264, 44.1 kHz mono, 48 kHz stereo and PNG import (4606.550633ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11580.076523
+
+> jencut@0.1.0 build /home/jeancdevx/dev/jencut
+> astro build
+
+20:18:05 [types] Generated 72ms
+20:18:05 [build] output: "static"
+20:18:05 [build] mode: "static"
+20:18:05 [build] directory: /home/jeancdevx/dev/jencut/dist/
+20:18:05 [build] Collecting build info...
+20:18:05 [build] ✓ Completed in 149ms.
+20:18:05 [build] Building static entrypoints...
+20:18:06 [vite] ✓ built in 791ms
+20:18:07 [vite] ✓ built in 1.66s
+20:18:07 [build] Rearranging server assets...
+
+ generating static routes 
+20:18:07   ├─ /404.html (+17ms) 
+20:18:08   ├─ /index.html (+6ms) 
+20:18:08 ✓ Completed in 64ms.
+
+20:18:08 [build] ✓ Completed in 2.59s.
+20:18:08 [build] 2 page(s) built in 2.75s
+20:18:08 [build] Complete!

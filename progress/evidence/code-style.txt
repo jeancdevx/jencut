@@ -1,0 +1,93 @@
+Estilo de código, 30 de octubre de 2026
+
+Control negativo temporal ejecutado con Node 24.22.2:
+- Oxlint rechaza padding/imports incorrectos (exit 1 esperado).
+- Oxfmt --check rechaza comillas, punto y coma e imports incorrectos (exit 1 esperado).
+- Los comandos configurados en lint-staged, ejecutados sobre el fixture temporal, corrigen todo (exit 0).
+- Oxlint y Oxfmt --check posteriores pasan (exit 0).
+- Repetir el pipeline conserva exactamente los mismos bytes.
+- El fixture temporal se elimina al terminar.
+
+Diagnóstico previo: 50 archivos JS/TS, 12 faltas de separación de imports, 24 de orden de nombres y 444 de padding.
+Correcciones aplicadas con pnpm format.
+Resultado final: pnpm lint, pnpm format:check y git diff --check pasan.
+
+Log de pnpm verify:
+
+
+> jencut@0.1.0 verify /home/jeancdevx/dev/jencut
+> pnpm lint && pnpm format:check && pnpm check && pnpm test && pnpm build
+
+
+> jencut@0.1.0 lint /home/jeancdevx/dev/jencut
+> oxlint --deny-warnings .
+
+
+> jencut@0.1.0 format:check /home/jeancdevx/dev/jencut
+> oxfmt --check .
+
+Checking formatting...
+
+All matched files use the correct format.
+Finished in 886ms on 80 files using 16 threads.
+
+> jencut@0.1.0 check /home/jeancdevx/dev/jencut
+> tsc --noEmit && astro check
+
+19:33:27 [vite] Re-optimizing dependencies because lockfile has changed
+19:33:27 [types] Generated 427ms
+19:33:27 [check] Getting diagnostics for Astro files in /home/jeancdevx/dev/jencut...
+Result (45 files): 
+- 0 errors
+- 0 warnings
+- 0 hints
+
+
+> jencut@0.1.0 test /home/jeancdevx/dev/jencut
+> tsx --test tests/domain.test.ts tests/service.test.ts
+
+✔ create validates name, ratio and unique IDs (2.58604ms)
+✔ split preserves complementary rational source ranges and synchronized links (3.672487ms)
+✔ trim acts on linked group, preserves neighbors, rejects zero and out of source (0.840987ms)
+✔ split boundaries and fractional commands are rejected (0.584866ms)
+✔ collision and locked members reject entire move atomically (1.012288ms)
+✔ duplicate creates internal links without modifying original or bytes (0.510397ms)
+✔ ripple rejects crossing clips and moves participating tracks conservatively (0.952005ms)
+✔ four tracks per kind and 50 clips are hard limits (2.003607ms)
+✔ track reorder renumbers peers, and unused resource removal is reversible (1.00277ms)
+✔ project duplication shares immutable assets and allocates independent montage references (1.078492ms)
+H1 verified: {"projectId":"48cb77f5-e598-4af9-97bb-fb11a7b7de29","revision":10,"inspection":{"duration":3,"frames":90,"width":1280,"height":720,"video":"h264","audio":"aac","sampleRate":48000},"originalHash":"156be3a45f19513bf12dd8a99584d4c2f7217b15cd000a6cf8684c25d1dc7de7"}
+✔ real import, editing, durable reopen, worker render, inspected output and failures (6458.940118ms)
+SP-03 verified: {"inputs":["clip-no-audio.mp4","audio-44100-mono.wav","music-48000.wav","overlay-alpha.png"],"inspection":{"duration":3,"frames":90,"width":1280,"height":720,"video":"h264","audio":"aac","sampleRate":48000},"png":"import only; alpha composition parity pending H3"}
+✔ SP-03 corpus: silent H.264, 44.1 kHz mono, 48 kHz stereo and PNG import (4301.043904ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11444.765473
+
+> jencut@0.1.0 build /home/jeancdevx/dev/jencut
+> astro build
+
+19:33:53 [types] Generated 72ms
+19:33:53 [build] output: "static"
+19:33:53 [build] mode: "static"
+19:33:53 [build] directory: /home/jeancdevx/dev/jencut/dist/
+19:33:53 [build] Collecting build info...
+19:33:53 [build] ✓ Completed in 146ms.
+19:33:53 [build] Building static entrypoints...
+19:33:53 [vite] ✓ built in 792ms
+19:33:55 [vite] ✓ built in 1.50s
+19:33:55 [build] Rearranging server assets...
+
+ generating static routes 
+19:33:55   ├─ /404.html (+18ms) 
+19:33:55   ├─ /index.html (+7ms) 
+19:33:55 ✓ Completed in 114ms.
+
+19:33:55 [build] ✓ Completed in 2.59s.
+19:33:55 [build] 2 page(s) built in 2.74s
+19:33:55 [build] Complete!

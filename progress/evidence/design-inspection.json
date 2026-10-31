@@ -1,0 +1,1484 @@
+{
+ "url": "http://127.0.0.1:4173",
+ "at": "2026-10-30T20:25:58.106Z",
+ "allow": [
+  "palette-purple"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.74,
+    0.79,
+    0.69
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 1925,
+     "screens": 2.1,
+     "words": 261,
+     "img": 14,
+     "video": 0,
+     "canvas": 0,
+     "svg": 48,
+     "sections": 0,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 12,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Tu estudio, a tu ritmo.",
+     "words": 5,
+     "chars": 23,
+     "lines": 1,
+     "size": 48,
+     "vw": 3.3,
+     "font": "Manrope",
+     "weight": 600,
+     "tracking": -0.04,
+     "leading": 1,
+     "top": 112,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Tu estudio, a tu ritmo.",
+     "words": 5,
+     "lines": 1,
+     "size": 48,
+     "font": "Manrope"
+    },
+    "headings": [
+     {
+      "text": "Tu estudio, a tu ritmo.",
+      "words": 5,
+      "chars": 23,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Manrope",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.31,
+      "top": 112,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Estudio de color · montaje H1 · copia",
+      "words": 8,
+      "chars": 37,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Manrope",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.47,
+      "top": 541,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 8,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.91,
+       "mono": false
+      },
+      {
+       "family": "Manrope",
+       "share": 0.09,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      14,
+      16,
+      20,
+      24,
+      30,
+      48
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 48,
+      "vw": 3.3,
+      "font": "Manrope",
+      "text": "Tu estudio, a tu ritmo."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.15,
+     "smallText": 7
+    },
+    "eyebrows": [
+     {
+      "text": "Continuar editando",
+      "above": "Estudio de color · montaje H1 · copia",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 517
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#101114",
+     "bodyBgHsl": {
+      "h": 225,
+      "s": 0.11,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#101114",
+       "top": 60,
+       "hsl": {
+        "h": 225,
+        "s": 0.11,
+        "l": 0.07
+       }
+      },
+      {
+       "color": "#15171c",
+       "top": 244,
+       "hsl": {
+        "h": 223,
+        "s": 0.14,
+        "l": 0.1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#a1a1aa",
+       "share": 0.39
+      },
+      {
+       "color": "#f4f4f5",
+       "share": 0.37
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.16
+      },
+      {
+       "color": "#bfb8d8",
+       "share": 0.03
+      },
+      {
+       "color": "#c8c5d2",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#6d28d9",
+      "hsl": {
+       "h": 263,
+       "s": 0.7,
+       "l": 0.5
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 4,
+     "radius": 6,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Ir al contenido",
+      "Proyectos",
+      "Nuevo proyecto",
+      "Continuar edición"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 2,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.flex.flex-col → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.group/input-group.relative → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "header.topbar 1440px",
+      "footer.projects-footer 1184px"
+     ],
+     "outlinedBoxes": 13,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 13,
+     "boxRadius": 6,
+     "squareMedia": 0,
+     "roundedMedia": 12,
+     "mediaRadius": 6,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.19
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 60,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "manrope",
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 1925,
+    "margins": {
+     "left": 232,
+     "right": 24
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Tu estudio, a tu ritmo.",
+      "size": 48,
+      "top": 112,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 232,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 2,
+    "bodySize": 20,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.05,
+    "voidBox": {
+     "x": 0,
+     "y": 360,
+     "w": 180,
+     "h": 360
+    }
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": true,
+    "ground": "#101114",
+    "sidebar": {
+     "w": 208,
+     "tag": "div",
+     "links": 6,
+     "share": 0.14
+    },
+    "topbar": {
+     "h": 60
+    },
+    "canvas": {
+     "left": 24,
+     "right": 24
+    },
+    "hero": {
+     "text": "Tu estudio, a tu ritmo.",
+     "words": 5,
+     "chars": 23,
+     "lines": 1,
+     "size": 48,
+     "vw": 3.3,
+     "font": "Manrope",
+     "weight": 600,
+     "tracking": -0.04,
+     "leading": 1,
+     "top": 112,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 13,
+     "firstScreen": 5,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 15,
+     "radii": [
+      [
+       6,
+       11
+      ],
+      [
+       8,
+       2
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       4,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 2,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.51,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      12,
+      14,
+      16,
+      20,
+      24,
+      30,
+      48
+     ]
+    },
+    "title": {
+     "text": "Tu estudio, a tu ritmo.",
+     "size": 48,
+     "top": 112
+    },
+    "colourShare": 0.35
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 1280,
+   "height": 800,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.69,
+    0.75,
+    0.71
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1280,
+     "h": 800
+    },
+    "page": {
+     "height": 1805,
+     "screens": 2.3,
+     "words": 275,
+     "img": 15,
+     "video": 0,
+     "canvas": 0,
+     "svg": 51,
+     "sections": 0,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 13,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Tu estudio, a tu ritmo.",
+     "words": 5,
+     "chars": 23,
+     "lines": 1,
+     "size": 36,
+     "vw": 2.8,
+     "font": "Manrope",
+     "weight": 600,
+     "tracking": -0.04,
+     "leading": 1.11,
+     "top": 116,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Tu estudio, a tu ritmo.",
+     "words": 5,
+     "lines": 1,
+     "size": 36,
+     "font": "Manrope"
+    },
+    "headings": [
+     {
+      "text": "Tu estudio, a tu ritmo.",
+      "words": 5,
+      "chars": 23,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.8,
+      "font": "Manrope",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.31,
+      "top": 116,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Estudio de color · montaje H1",
+      "words": 6,
+      "chars": 29,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.3,
+      "font": "Manrope",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.45,
+      "top": 541,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 6,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.92,
+       "mono": false
+      },
+      {
+       "family": "Manrope",
+       "share": 0.08,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      14,
+      16,
+      20,
+      24,
+      30,
+      36
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 36,
+      "vw": 2.8,
+      "font": "Manrope",
+      "text": "Tu estudio, a tu ritmo."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.15,
+     "smallText": 7
+    },
+    "eyebrows": [
+     {
+      "text": "Continuar editando",
+      "above": "Estudio de color · montaje H1",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 517
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#101114",
+     "bodyBgHsl": {
+      "h": 225,
+      "s": 0.11,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#101114",
+       "top": 60,
+       "hsl": {
+        "h": 225,
+        "s": 0.11,
+        "l": 0.07
+       }
+      },
+      {
+       "color": "#15171c",
+       "top": 244,
+       "hsl": {
+        "h": 223,
+        "s": 0.14,
+        "l": 0.1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#a1a1aa",
+       "share": 0.39
+      },
+      {
+       "color": "#f4f4f5",
+       "share": 0.37
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.16
+      },
+      {
+       "color": "#bfb8d8",
+       "share": 0.03
+      },
+      {
+       "color": "#c8c5d2",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#6d28d9",
+      "hsl": {
+       "h": 263,
+       "s": 0.7,
+       "l": 0.5
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 4,
+     "radius": 6,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Ir al contenido",
+      "Proyectos",
+      "Nuevo proyecto",
+      "Continuar edición"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 2,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.flex.flex-col → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.group/input-group.relative → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "header.topbar 1280px",
+      "footer.projects-footer 1024px"
+     ],
+     "outlinedBoxes": 14,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 14,
+     "boxRadius": 6,
+     "squareMedia": 0,
+     "roundedMedia": 13,
+     "mediaRadius": 6,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.21
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 60,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "manrope",
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1280,
+     "h": 800
+    },
+    "pageH": 1805,
+    "margins": {
+     "left": 232,
+     "right": 24
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Tu estudio, a tu ritmo.",
+      "size": 36,
+      "top": 116,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 232,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 2,
+    "bodySize": 20,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.06,
+    "voidBox": {
+     "x": 0,
+     "y": 320,
+     "w": 213,
+     "h": 267
+    }
+   },
+   "app": {
+    "viewport": {
+     "w": 1280,
+     "h": 800
+    },
+    "dark": true,
+    "ground": "#101114",
+    "sidebar": {
+     "w": 208,
+     "tag": "div",
+     "links": 6,
+     "share": 0.16
+    },
+    "topbar": {
+     "h": 60
+    },
+    "canvas": {
+     "left": 24,
+     "right": 24
+    },
+    "hero": {
+     "text": "Tu estudio, a tu ritmo.",
+     "words": 5,
+     "chars": 23,
+     "lines": 1,
+     "size": 36,
+     "vw": 2.8,
+     "font": "Manrope",
+     "weight": 600,
+     "tracking": -0.04,
+     "leading": 1.11,
+     "top": 116,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 14,
+     "firstScreen": 5,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 16,
+     "radii": [
+      [
+       6,
+       12
+      ],
+      [
+       8,
+       2
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       4,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 2,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.52,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      12,
+      14,
+      16,
+      20,
+      24,
+      30,
+      36
+     ]
+    },
+    "title": {
+     "text": "Tu estudio, a tu ritmo.",
+     "size": 36,
+     "top": 116
+    },
+    "colourShare": 0.291
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 5,
+   "filled": [
+    0.76,
+    0.84,
+    0.84,
+    0.84,
+    0.61
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 4174,
+     "screens": 4.9,
+     "words": 232,
+     "img": 15,
+     "video": 0,
+     "canvas": 0,
+     "svg": 45,
+     "sections": 0,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 13,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail",
+      "thumbnail"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Tu estudio, a tu ritmo.",
+     "words": 5,
+     "chars": 23,
+     "lines": 1,
+     "size": 30,
+     "vw": 7.7,
+     "font": "Manrope",
+     "weight": 600,
+     "tracking": -0.04,
+     "leading": 1.2,
+     "top": 136,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Tu estudio, a tu ritmo.",
+     "words": 5,
+     "lines": 1,
+     "size": 30,
+     "font": "Manrope"
+    },
+    "headings": [
+     {
+      "text": "Tu estudio, a tu ritmo.",
+      "words": 5,
+      "chars": 23,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Manrope",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.8,
+      "top": 136,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Estudio de color · montaje H1",
+      "words": 6,
+      "chars": 29,
+      "lines": 2,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Manrope",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 417,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Tus proyectos",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Manrope",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 631,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 3,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 5,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.91,
+       "mono": false
+      },
+      {
+       "family": "Manrope",
+       "share": 0.09,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      14,
+      16,
+      24,
+      30
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 30,
+      "vw": 7.7,
+      "font": "Manrope",
+      "text": "Tu estudio, a tu ritmo."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.19,
+     "smallText": 4
+    },
+    "eyebrows": [
+     {
+      "text": "Mi estudio",
+      "above": "Tu estudio, a tu ritmo.",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 94
+     },
+     {
+      "text": "Continuar editando",
+      "above": "Estudio de color · montaje H1",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 393
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#101114",
+     "bodyBgHsl": {
+      "h": 225,
+      "s": 0.11,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#101114",
+       "top": 60,
+       "hsl": {
+        "h": 225,
+        "s": 0.11,
+        "l": 0.07
+       }
+      },
+      {
+       "color": "#15171c",
+       "top": 296,
+       "hsl": {
+        "h": 223,
+        "s": 0.14,
+        "l": 0.1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f4f4f5",
+       "share": 0.39
+      },
+      {
+       "color": "#a1a1aa",
+       "share": 0.36
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.19
+      },
+      {
+       "color": "#bfb8d8",
+       "share": 0.04
+      },
+      {
+       "color": "#d4cfdf",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#6d28d9",
+      "hsl": {
+       "h": 263,
+       "s": 0.7,
+       "l": 0.5
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 3,
+     "radius": 6,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Ir al contenido",
+      "Nuevo proyecto",
+      "Continuar edición"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 2,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.flex.flex-col → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.group/input-group.relative → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "header.topbar 390px",
+      "footer.projects-footer 358px"
+     ],
+     "outlinedBoxes": 13,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 13,
+     "boxRadius": 6,
+     "squareMedia": 0,
+     "roundedMedia": 13,
+     "mediaRadius": 6,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.21
+     },
+     {
+      "type": "img",
+      "ratio": 0.12
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 60,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "manrope",
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 4174,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Tu estudio, a tu ritmo.",
+      "size": 30,
+      "top": 136,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 2,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": true,
+    "ground": "#101114",
+    "sidebar": null,
+    "topbar": {
+     "h": 60
+    },
+    "canvas": {
+     "left": 16,
+     "right": 16
+    },
+    "hero": {
+     "text": "Tu estudio, a tu ritmo.",
+     "words": 5,
+     "chars": 23,
+     "lines": 1,
+     "size": 30,
+     "vw": 7.7,
+     "font": "Manrope",
+     "weight": 600,
+     "tracking": -0.04,
+     "leading": 1.2,
+     "top": 136,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 13,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 14,
+     "radii": [
+      [
+       6,
+       12
+      ],
+      [
+       8,
+       1
+      ],
+      [
+       4,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 2,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.54,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      12,
+      14,
+      16,
+      24,
+      30
+     ]
+    },
+    "title": {
+     "text": "Tu estudio, a tu ritmo.",
+     "size": 30,
+     "top": 136
+    },
+    "colourShare": 0.255
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "colour-sprawl",
+   "width": 1440,
+   "message": "35% of the first screen is strongly coloured.",
+   "fix": "Keep the screen neutral and spend colour on data and status: the studied screens sit near 3%, and only tinted styles reach 10–15%, as pale tints rather than saturated fills.",
+   "alsoAt": [
+    1280,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "tiny-text",
+   "width": 1440,
+   "message": "51% of the text is under 13px.",
+   "fix": "Data and labels read at 13–14px; keep 11–12px for sublines and axis ticks.",
+   "alsoAt": [
+    1280,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "below-fold",
+   "width": 1440,
+   "message": "Only 5 of 13 blocks start on the first 1440px screen.",
+   "fix": "Every block the brief names shows its header and first rows on the first desktop screen: size the headline block to its question, cap long lists with \"View all\", and put time-sensitive blocks before long tables.",
+   "alsoAt": [
+    1280
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "app-title-size",
+   "width": 1440,
+   "message": "The h1 is 48px (\"Tu estudio, a tu ritmo.\").",
+   "fix": "An app screen is not a landing page: the title is 18-32px (20-24px on a phone).",
+   "alsoAt": [
+    1280,
+    390
+   ]
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/home/jeancdevx/dev/jencut/.taste-skill/final/desktop-1440-fold.jpg",
+   "pages": [
+    "/home/jeancdevx/dev/jencut/.taste-skill/final/desktop-1440-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "desktop",
+   "width": 1280,
+   "fold": "/home/jeancdevx/dev/jencut/.taste-skill/final/desktop-1280-fold.jpg",
+   "pages": [
+    "/home/jeancdevx/dev/jencut/.taste-skill/final/desktop-1280-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/home/jeancdevx/dev/jencut/.taste-skill/final/mobile-fold.jpg",
+   "pages": [
+    "/home/jeancdevx/dev/jencut/.taste-skill/final/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

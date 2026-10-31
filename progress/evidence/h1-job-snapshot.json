@@ -1,0 +1,179 @@
+{
+  "job": {
+    "id": "0f52972e-b705-4184-9a0e-a2702d9ea17a",
+    "projectId": "16be4a2a-8b27-4974-8cd1-06e20f291842",
+    "revision": 6,
+    "kind": "export",
+    "status": "pending",
+    "progress": 0,
+    "settings": {
+      "resolution": 720
+    },
+    "idempotencyKey": "a9722f8d-94e6-4f0e-a80c-ffc8403d2d58"
+  },
+  "project": {
+    "schemaVersion": 1,
+    "id": "16be4a2a-8b27-4974-8cd1-06e20f291842",
+    "name": "Estudio de color · montaje H1",
+    "revision": 6,
+    "fps": {
+      "num": 30,
+      "den": 1
+    },
+    "canvas": {
+      "width": 1920,
+      "height": 1080,
+      "colorSpace": "rec709-sdr"
+    },
+    "assets": [
+      {
+        "id": "02a3b2a6-4b39-400e-b7ca-490a16c9d5a4",
+        "kind": "video",
+        "contentHash": "156be3a45f19513bf12dd8a99584d4c2f7217b15cd000a6cf8684c25d1dc7de7",
+        "managedRelativePath": "originals/02a3b2a6-4b39-400e-b7ca-490a16c9d5a4.mp4",
+        "streams": [
+          {
+            "index": 0,
+            "type": "video",
+            "codec": "h264",
+            "timeBase": {
+              "num": 1,
+              "den": 15360
+            },
+            "durationPTS": 46080,
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "index": 1,
+            "type": "audio",
+            "codec": "aac",
+            "timeBase": {
+              "num": 1,
+              "den": 48000
+            },
+            "durationPTS": 144000,
+            "sampleRate": 48000,
+            "channels": 2
+          }
+        ],
+        "rotationDegrees": 0,
+        "colorSpace": "rec709-sdr"
+      }
+    ],
+    "tracks": [
+      {
+        "id": "588e53d9-ebb5-4bd6-a7b4-b53ad03de5b0",
+        "kind": "visual",
+        "order": 0,
+        "name": "Video",
+        "locked": false,
+        "hidden": false,
+        "muted": false,
+        "clips": [
+          {
+            "id": "dd29e64b-e870-4a75-9ef4-5bca121c68e8",
+            "kind": "video",
+            "trackId": "588e53d9-ebb5-4bd6-a7b4-b53ad03de5b0",
+            "startFrame": 0,
+            "durationFrames": 45,
+            "assetId": "02a3b2a6-4b39-400e-b7ca-490a16c9d5a4",
+            "streamIndex": 0,
+            "sourceInPTS": 0,
+            "sourceTimeBase": {
+              "num": 1,
+              "den": 15360
+            },
+            "linkGroupId": "055b5274-04de-4031-bb79-f57e57b38052",
+            "effects": {}
+          },
+          {
+            "id": "7390d1b5-ff9d-43ee-bf02-554f16651c4e",
+            "kind": "video",
+            "trackId": "588e53d9-ebb5-4bd6-a7b4-b53ad03de5b0",
+            "startFrame": 45,
+            "durationFrames": 36,
+            "assetId": "02a3b2a6-4b39-400e-b7ca-490a16c9d5a4",
+            "streamIndex": 0,
+            "sourceInPTS": 3,
+            "sourceTimeBase": {
+              "num": 1,
+              "den": 2
+            },
+            "linkGroupId": "3dfa38cc-d9ca-48b8-9983-7a0071a29796",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "99412c62-881a-42e1-af26-f6004118f6ef",
+        "kind": "audio",
+        "order": 0,
+        "name": "Audio original",
+        "locked": false,
+        "hidden": false,
+        "muted": false,
+        "clips": [
+          {
+            "id": "9bfc040f-4cd2-4e29-9ac2-0f666ba7dc53",
+            "kind": "audio",
+            "trackId": "99412c62-881a-42e1-af26-f6004118f6ef",
+            "startFrame": 0,
+            "durationFrames": 45,
+            "assetId": "02a3b2a6-4b39-400e-b7ca-490a16c9d5a4",
+            "streamIndex": 1,
+            "sourceInPTS": 0,
+            "sourceTimeBase": {
+              "num": 1,
+              "den": 48000
+            },
+            "linkGroupId": "055b5274-04de-4031-bb79-f57e57b38052",
+            "effects": {}
+          },
+          {
+            "id": "82e632e4-68db-4407-92c0-8890ce49f346",
+            "kind": "audio",
+            "trackId": "99412c62-881a-42e1-af26-f6004118f6ef",
+            "startFrame": 45,
+            "durationFrames": 36,
+            "assetId": "02a3b2a6-4b39-400e-b7ca-490a16c9d5a4",
+            "streamIndex": 1,
+            "sourceInPTS": 3,
+            "sourceTimeBase": {
+              "num": 1,
+              "den": 2
+            },
+            "linkGroupId": "3dfa38cc-d9ca-48b8-9983-7a0071a29796",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "2e27f3c0-79e6-446c-ad02-aa940f4d0e72",
+        "kind": "audio",
+        "order": 1,
+        "name": "Música",
+        "locked": false,
+        "hidden": false,
+        "muted": false,
+        "clips": []
+      }
+    ],
+    "linkGroups": [
+      {
+        "id": "055b5274-04de-4031-bb79-f57e57b38052",
+        "memberClipIds": [
+          "dd29e64b-e870-4a75-9ef4-5bca121c68e8",
+          "9bfc040f-4cd2-4e29-9ac2-0f666ba7dc53"
+        ]
+      },
+      {
+        "id": "3dfa38cc-d9ca-48b8-9983-7a0071a29796",
+        "memberClipIds": [
+          "7390d1b5-ff9d-43ee-bf02-554f16651c4e",
+          "82e632e4-68db-4407-92c0-8890ce49f346"
+        ]
+      }
+    ]
+  }
+}
